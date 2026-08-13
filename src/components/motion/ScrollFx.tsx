@@ -348,11 +348,15 @@ function Tile({
   const outO = mode === "shatter" ? [1, 0.15] : [0.15, 1];
   const outS = mode === "shatter" ? [1, 0.75] : [0.75, 1];
 
+  const outBlur = mode === "shatter" ? [0, 12] : [12, 0];
+
   const x = useTransform(progress, range, reduce ? [0, 0] : (outA as number[]));
   const y = useTransform(progress, range, reduce ? [0, 0] : (outB as number[]));
   const rotate = useTransform(progress, range, reduce ? [0, 0] : (outR as number[]));
   const opacity = useTransform(progress, range, reduce ? [1, 1] : (outO as number[]));
   const scale = useTransform(progress, range, reduce ? [1, 1] : (outS as number[]));
+  const blur = useTransform(progress, range, reduce ? [0, 0] : (outBlur as number[]));
+  const filter = useTransform(blur, (b) => `blur(${b}px)`);
 
   return (
     <motion.div
@@ -363,6 +367,8 @@ function Tile({
         rotate,
         opacity,
         scale,
+        filter,
+
         position: "absolute",
         left: `${(col / cols) * 100}%`,
         top: `${(row / rows) * 100}%`,
