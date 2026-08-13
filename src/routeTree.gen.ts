@@ -10,14 +10,24 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
 import { Route as AboutHistoryRouteImport } from './routes/about.history'
 import { Route as AboutLeadershipRouteImport } from './routes/about.leadership'
 import { Route as AboutMissionRouteImport } from './routes/about.mission'
+import { Route as EventsIndexRouteImport } from './routes/events.index'
+import { Route as EventsSlugRouteImport } from './routes/events.$slug'
+import { Route as MinistriesIndexRouteImport } from './routes/ministries.index'
+import { Route as MinistriesSlugRouteImport } from './routes/ministries.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutIndexRoute = AboutIndexRouteImport.update({
@@ -40,50 +50,114 @@ const AboutMissionRoute = AboutMissionRouteImport.update({
   path: '/about/mission',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EventsIndexRoute = EventsIndexRouteImport.update({
+  id: '/events/',
+  path: '/events/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsSlugRoute = EventsSlugRouteImport.update({
+  id: '/events/$slug',
+  path: '/events/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MinistriesIndexRoute = MinistriesIndexRouteImport.update({
+  id: '/ministries/',
+  path: '/ministries/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MinistriesSlugRoute = MinistriesSlugRouteImport.update({
+  id: '/ministries/$slug',
+  path: '/ministries/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/gallery': typeof GalleryRoute
   '/about/history': typeof AboutHistoryRoute
   '/about/leadership': typeof AboutLeadershipRoute
   '/about/mission': typeof AboutMissionRoute
+  '/events/$slug': typeof EventsSlugRoute
+  '/ministries/$slug': typeof MinistriesSlugRoute
   '/about/': typeof AboutIndexRoute
+  '/events/': typeof EventsIndexRoute
+  '/ministries/': typeof MinistriesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/gallery': typeof GalleryRoute
   '/about/history': typeof AboutHistoryRoute
   '/about/leadership': typeof AboutLeadershipRoute
   '/about/mission': typeof AboutMissionRoute
+  '/events/$slug': typeof EventsSlugRoute
+  '/ministries/$slug': typeof MinistriesSlugRoute
   '/about': typeof AboutIndexRoute
+  '/events': typeof EventsIndexRoute
+  '/ministries': typeof MinistriesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/gallery': typeof GalleryRoute
   '/about/history': typeof AboutHistoryRoute
   '/about/leadership': typeof AboutLeadershipRoute
   '/about/mission': typeof AboutMissionRoute
+  '/events/$slug': typeof EventsSlugRoute
+  '/ministries/$slug': typeof MinistriesSlugRoute
   '/about/': typeof AboutIndexRoute
+  '/events/': typeof EventsIndexRoute
+  '/ministries/': typeof MinistriesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/about/history' | '/about/leadership' | '/about/mission' | '/about/'
-  fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about/history' | '/about/leadership' | '/about/mission' | '/about'
-  id:
-    | '__root__'
     | '/'
+    | '/gallery'
     | '/about/history'
     | '/about/leadership'
     | '/about/mission'
+    | '/events/$slug'
+    | '/ministries/$slug'
     | '/about/'
+    | '/events/'
+    | '/ministries/'
+  fileRoutesByTo: FileRoutesByTo
+  to:
+    | '/'
+    | '/gallery'
+    | '/about/history'
+    | '/about/leadership'
+    | '/about/mission'
+    | '/events/$slug'
+    | '/ministries/$slug'
+    | '/about'
+    | '/events'
+    | '/ministries'
+  id:
+    | '__root__'
+    | '/'
+    | '/gallery'
+    | '/about/history'
+    | '/about/leadership'
+    | '/about/mission'
+    | '/events/$slug'
+    | '/ministries/$slug'
+    | '/about/'
+    | '/events/'
+    | '/ministries/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  GalleryRoute: typeof GalleryRoute
   AboutHistoryRoute: typeof AboutHistoryRoute
   AboutLeadershipRoute: typeof AboutLeadershipRoute
   AboutMissionRoute: typeof AboutMissionRoute
+  EventsSlugRoute: typeof EventsSlugRoute
+  MinistriesSlugRoute: typeof MinistriesSlugRoute
   AboutIndexRoute: typeof AboutIndexRoute
+  EventsIndexRoute: typeof EventsIndexRoute
+  MinistriesIndexRoute: typeof MinistriesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -93,6 +167,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about/': {
@@ -123,15 +204,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutMissionRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/events/': {
+      id: '/events/'
+      path: '/events'
+      fullPath: '/events/'
+      preLoaderRoute: typeof EventsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events/$slug': {
+      id: '/events/$slug'
+      path: '/events/$slug'
+      fullPath: '/events/$slug'
+      preLoaderRoute: typeof EventsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ministries/': {
+      id: '/ministries/'
+      path: '/ministries'
+      fullPath: '/ministries/'
+      preLoaderRoute: typeof MinistriesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ministries/$slug': {
+      id: '/ministries/$slug'
+      path: '/ministries/$slug'
+      fullPath: '/ministries/$slug'
+      preLoaderRoute: typeof MinistriesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  GalleryRoute: GalleryRoute,
   AboutHistoryRoute: AboutHistoryRoute,
   AboutLeadershipRoute: AboutLeadershipRoute,
   AboutMissionRoute: AboutMissionRoute,
+  EventsSlugRoute: EventsSlugRoute,
+  MinistriesSlugRoute: MinistriesSlugRoute,
   AboutIndexRoute: AboutIndexRoute,
+  EventsIndexRoute: EventsIndexRoute,
+  MinistriesIndexRoute: MinistriesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
