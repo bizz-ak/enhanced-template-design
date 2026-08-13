@@ -10,43 +10,193 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as AboutRouteImport } from './routes/about'
+import { Route as BeliefsRouteImport } from './routes/beliefs'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as JoinRouteImport } from './routes/join'
+import { Route as AboutIndexRouteImport } from './routes/about.index'
+import { Route as AboutHistoryRouteImport } from './routes/about.history'
+import { Route as AboutLeadershipRouteImport } from './routes/about.leadership'
+import { Route as AboutMissionRouteImport } from './routes/about.mission'
+import { Route as EventsIndexRouteImport } from './routes/events.index'
+import { Route as EventsSlugRouteImport } from './routes/events.$slug'
+import { Route as MinistriesIndexRouteImport } from './routes/ministries.index'
+import { Route as MinistriesSlugRouteImport } from './routes/ministries.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
+const BeliefsRoute = BeliefsRouteImport.update({
+  id: '/beliefs',
+  path: '/beliefs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JoinRoute = JoinRouteImport.update({
+  id: '/join',
+  path: '/join',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutIndexRoute = AboutIndexRouteImport.update({
+  id: '/about/',
+  path: '/about/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutHistoryRoute = AboutHistoryRouteImport.update({
+  id: '/about/history',
+  path: '/about/history',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutLeadershipRoute = AboutLeadershipRouteImport.update({
+  id: '/about/leadership',
+  path: '/about/leadership',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutMissionRoute = AboutMissionRouteImport.update({
+  id: '/about/mission',
+  path: '/about/mission',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsIndexRoute = EventsIndexRouteImport.update({
+  id: '/events/',
+  path: '/events/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsSlugRoute = EventsSlugRouteImport.update({
+  id: '/events/$slug',
+  path: '/events/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MinistriesIndexRoute = MinistriesIndexRouteImport.update({
+  id: '/ministries/',
+  path: '/ministries/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MinistriesSlugRoute = MinistriesSlugRouteImport.update({
+  id: '/ministries/$slug',
+  path: '/ministries/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/beliefs': typeof BeliefsRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
+  '/join': typeof JoinRoute
+  '/about/history': typeof AboutHistoryRoute
+  '/about/leadership': typeof AboutLeadershipRoute
+  '/about/mission': typeof AboutMissionRoute
+  '/events/$slug': typeof EventsSlugRoute
+  '/ministries/$slug': typeof MinistriesSlugRoute
+  '/about/': typeof AboutIndexRoute
+  '/events/': typeof EventsIndexRoute
+  '/ministries/': typeof MinistriesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/beliefs': typeof BeliefsRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
+  '/join': typeof JoinRoute
+  '/about/history': typeof AboutHistoryRoute
+  '/about/leadership': typeof AboutLeadershipRoute
+  '/about/mission': typeof AboutMissionRoute
+  '/events/$slug': typeof EventsSlugRoute
+  '/ministries/$slug': typeof MinistriesSlugRoute
+  '/about': typeof AboutIndexRoute
+  '/events': typeof EventsIndexRoute
+  '/ministries': typeof MinistriesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/beliefs': typeof BeliefsRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
+  '/join': typeof JoinRoute
+  '/about/history': typeof AboutHistoryRoute
+  '/about/leadership': typeof AboutLeadershipRoute
+  '/about/mission': typeof AboutMissionRoute
+  '/events/$slug': typeof EventsSlugRoute
+  '/ministries/$slug': typeof MinistriesSlugRoute
+  '/about/': typeof AboutIndexRoute
+  '/events/': typeof EventsIndexRoute
+  '/ministries/': typeof MinistriesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about'
+  fullPaths:
+    | '/'
+    | '/beliefs'
+    | '/contact'
+    | '/gallery'
+    | '/join'
+    | '/about/history'
+    | '/about/leadership'
+    | '/about/mission'
+    | '/events/$slug'
+    | '/ministries/$slug'
+    | '/about/'
+    | '/events/'
+    | '/ministries/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about'
-  id: '__root__' | '/' | '/about'
+  to:
+    | '/'
+    | '/beliefs'
+    | '/contact'
+    | '/gallery'
+    | '/join'
+    | '/about/history'
+    | '/about/leadership'
+    | '/about/mission'
+    | '/events/$slug'
+    | '/ministries/$slug'
+    | '/about'
+    | '/events'
+    | '/ministries'
+  id:
+    | '__root__'
+    | '/'
+    | '/beliefs'
+    | '/contact'
+    | '/gallery'
+    | '/join'
+    | '/about/history'
+    | '/about/leadership'
+    | '/about/mission'
+    | '/events/$slug'
+    | '/ministries/$slug'
+    | '/about/'
+    | '/events/'
+    | '/ministries/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
+  BeliefsRoute: typeof BeliefsRoute
+  ContactRoute: typeof ContactRoute
+  GalleryRoute: typeof GalleryRoute
+  JoinRoute: typeof JoinRoute
+  AboutHistoryRoute: typeof AboutHistoryRoute
+  AboutLeadershipRoute: typeof AboutLeadershipRoute
+  AboutMissionRoute: typeof AboutMissionRoute
+  EventsSlugRoute: typeof EventsSlugRoute
+  MinistriesSlugRoute: typeof MinistriesSlugRoute
+  AboutIndexRoute: typeof AboutIndexRoute
+  EventsIndexRoute: typeof EventsIndexRoute
+  MinistriesIndexRoute: typeof MinistriesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -58,11 +208,88 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/about': {
-      id: '/about'
+    '/beliefs': {
+      id: '/beliefs'
+      path: '/beliefs'
+      fullPath: '/beliefs'
+      preLoaderRoute: typeof BeliefsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/join': {
+      id: '/join'
+      path: '/join'
+      fullPath: '/join'
+      preLoaderRoute: typeof JoinRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/': {
+      id: '/about/'
       path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
+      fullPath: '/about/'
+      preLoaderRoute: typeof AboutIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/history': {
+      id: '/about/history'
+      path: '/about/history'
+      fullPath: '/about/history'
+      preLoaderRoute: typeof AboutHistoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/leadership': {
+      id: '/about/leadership'
+      path: '/about/leadership'
+      fullPath: '/about/leadership'
+      preLoaderRoute: typeof AboutLeadershipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/mission': {
+      id: '/about/mission'
+      path: '/about/mission'
+      fullPath: '/about/mission'
+      preLoaderRoute: typeof AboutMissionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events/': {
+      id: '/events/'
+      path: '/events'
+      fullPath: '/events/'
+      preLoaderRoute: typeof EventsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events/$slug': {
+      id: '/events/$slug'
+      path: '/events/$slug'
+      fullPath: '/events/$slug'
+      preLoaderRoute: typeof EventsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ministries/': {
+      id: '/ministries/'
+      path: '/ministries'
+      fullPath: '/ministries/'
+      preLoaderRoute: typeof MinistriesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ministries/$slug': {
+      id: '/ministries/$slug'
+      path: '/ministries/$slug'
+      fullPath: '/ministries/$slug'
+      preLoaderRoute: typeof MinistriesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -70,7 +297,18 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
+  BeliefsRoute: BeliefsRoute,
+  ContactRoute: ContactRoute,
+  GalleryRoute: GalleryRoute,
+  JoinRoute: JoinRoute,
+  AboutHistoryRoute: AboutHistoryRoute,
+  AboutLeadershipRoute: AboutLeadershipRoute,
+  AboutMissionRoute: AboutMissionRoute,
+  EventsSlugRoute: EventsSlugRoute,
+  MinistriesSlugRoute: MinistriesSlugRoute,
+  AboutIndexRoute: AboutIndexRoute,
+  EventsIndexRoute: EventsIndexRoute,
+  MinistriesIndexRoute: MinistriesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
