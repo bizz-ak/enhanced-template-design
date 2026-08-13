@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell, PageHero } from "@/components/PageShell";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
 import { PinnedScene, CurtainImage, FromSide, FromBelow } from "@/components/motion/ScrollFx";
+import { FixedBackdrop, SpotlightPanel } from "@/components/motion/BackdropFx";
 import { img, ministries } from "@/data/site";
 
 export const Route = createFileRoute("/about/")({
@@ -107,6 +108,35 @@ function AboutPage() {
           ))}
         </Stagger>
       </section>
+
+      <FixedBackdrop src={img.bgCampusNight} alt="Nyerere Campus at night">
+        <div className="mx-auto max-w-4xl">
+          <p className="text-center text-xs font-bold uppercase tracking-[0.35em] text-gold">
+            Our campus, our calling
+          </p>
+          <h2 className="mt-6 text-center font-display text-3xl font-extrabold leading-tight sm:text-5xl">
+            A light that does not go out when the lectures end
+          </h2>
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            <SpotlightPanel
+              src={img.worship}
+              title="Worship"
+              text="Vespers, Sabbath school and campus-wide services that keep Christ at the centre of student life."
+            />
+            <SpotlightPanel
+              src={img.outreach}
+              title="Service"
+              text="Health days, tutoring and community projects across Dar es Salaam every semester."
+            />
+            <SpotlightPanel
+              src={img.leaders}
+              title="Leadership"
+              text="Student leaders mentored to serve the church and the nation long after graduation."
+            />
+          </div>
+        </div>
+      </FixedBackdrop>
+
     </PageShell>
   );
 }

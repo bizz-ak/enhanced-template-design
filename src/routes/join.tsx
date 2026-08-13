@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell, PageHero } from "@/components/PageShell";
 import { Stagger, StaggerItem } from "@/components/motion/Reveal";
 import { AssembleImage, FromBelow } from "@/components/motion/ScrollFx";
+import { ZoomThroughBackdrop } from "@/components/motion/BackdropFx";
 import { img, ministries } from "@/data/site";
 
 export const Route = createFileRoute("/join")({
@@ -87,6 +88,15 @@ function JoinPage() {
           Talk to a leader
         </Link>
       </section>
+
+      <ZoomThroughBackdrop
+        src={img.bgSunrise}
+        alt="Golden sunrise over the horizon"
+        eyebrow="One decision away"
+        title="Start your first week with a family"
+        body="Fill the form, meet your prayer band, and step into a community that will walk with you until graduation and beyond."
+      />
+
     </PageShell>
   );
 }

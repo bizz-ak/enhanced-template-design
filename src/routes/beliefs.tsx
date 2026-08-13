@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageShell, PageHero } from "@/components/PageShell";
 import { Stagger, StaggerItem } from "@/components/motion/Reveal";
 import { PinnedScene, FromBelow } from "@/components/motion/ScrollFx";
+import { TextMaskImage, FixedBackdrop } from "@/components/motion/BackdropFx";
 import { img, beliefs } from "@/data/site";
 
 export const Route = createFileRoute("/beliefs")({
@@ -58,6 +59,25 @@ function BeliefsPage() {
           ))}
         </Stagger>
       </section>
+
+      <TextMaskImage
+        src={img.bgStainedGlass}
+        text="TRUTH"
+        sub="Twenty-eight fundamental beliefs, one living Christ at the centre of them all."
+      />
+
+      <FixedBackdrop src={img.bgScripture} alt="Open Bible in warm light">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.35em] text-gold">Sola scriptura</p>
+          <blockquote className="mt-6 font-display text-3xl font-extrabold leading-tight sm:text-4xl">
+            &ldquo;Thy word is a lamp unto my feet, and a light unto my path.&rdquo;
+          </blockquote>
+          <p className="mt-5 text-sm font-semibold tracking-widest text-muted-foreground">
+            PSALM 119:105
+          </p>
+        </div>
+      </FixedBackdrop>
+
     </PageShell>
   );
 }
