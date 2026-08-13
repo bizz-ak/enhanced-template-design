@@ -93,7 +93,7 @@ export function AmbientBackdrop() {
             best = el;
           }
         });
-        const key = best ? (best as HTMLElement).dataset.ambient : undefined;
+        const key = best ? (best as HTMLElement).dataset["ambient"] : undefined;
         const src = key ? (img as Record<string, string>)[key] : undefined;
         setOverride(src ?? null);
       },
@@ -104,7 +104,7 @@ export function AmbientBackdrop() {
   }, [pathname]);
 
   const src = override ?? frames[index] ?? frames[0];
-  const move = moves[(override ? frames.length + index : index) % moves.length];
+  const move = moves[(override ? frames.length + index : index) % moves.length]!;
 
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
