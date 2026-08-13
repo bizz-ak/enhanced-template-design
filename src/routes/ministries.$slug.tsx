@@ -45,7 +45,13 @@ function MinistryDetail() {
         imageAlt={ministry.name}
       />
 
-      <AssembleImage src={ministry.image} alt={ministry.name} caption={ministry.name} />
+      <AssembleImage
+        src={ministry.image}
+        alt={ministry.name}
+        caption={ministry.name}
+        title={ministry.name}
+        body={ministry.tagline}
+      />
 
       <section className="px-6 py-20 sm:px-12 lg:px-16">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">

@@ -39,7 +39,13 @@ function JoinPage() {
         imageAlt="Students welcoming a new member"
       />
 
-      <AssembleImage src={img.leaders} alt="TUCASA members together" caption="You belong here" />
+      <AssembleImage
+        src={img.leaders}
+        alt="TUCASA members together"
+        caption="You belong here"
+        title="You are the missing piece"
+        body="Come as you are — first year or finalist, Adventist or simply curious. The family is only complete when you are in it."
+      />
 
       <section className="px-6 py-20 sm:px-12 lg:px-16">
         <FromBelow>

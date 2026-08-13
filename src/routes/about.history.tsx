@@ -37,6 +37,8 @@ function HistoryPage() {
         src={img.leaders}
         alt="Student leaders gathered together"
         caption="Generations of student leaders"
+        title="Built by students, kept by grace"
+        body="From a handful of Adventist students meeting under a tree in the 1980s, every generation has handed over the same trust: keep the Word central, keep the door open, keep serving Dar es Salaam."
       />
 
       <section className="px-6 py-20 sm:px-12 lg:px-16">

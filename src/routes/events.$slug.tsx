@@ -45,7 +45,13 @@ function EventDetail() {
         imageAlt={event.title}
       />
 
-      <ShatterImage src={event.image} alt={event.title} caption={event.title} />
+      <ShatterImage
+        src={event.image}
+        alt={event.title}
+        caption={event.title}
+        title={event.title}
+        body={event.summary}
+      />
 
       <section className="px-6 py-20 sm:px-12 lg:px-16">
         <FromSide dir="left">

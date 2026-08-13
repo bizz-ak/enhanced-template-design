@@ -33,11 +33,23 @@ function GalleryPage() {
         imageAlt="Students sharing a fellowship meal"
       />
 
-      <AssembleImage src={img.baptism} alt="Baptism at sunrise" caption="Baptism Sabbath" />
+      <AssembleImage
+        src={img.baptism}
+        alt="Baptism at sunrise"
+        caption="Baptism Sabbath"
+        title="Every picture began as a decision"
+        body="Baptism Sabbath is the moment the whole campus family waits for — friends, choir, and the quiet water at sunrise."
+      />
 
       <ScrollGallery images={galleryImages} />
 
-      <ShatterImage src={img.campusAerial} alt="Aerial view of campus" caption="Nyerere Campus, UDSM" />
+      <ShatterImage
+        src={img.campusAerial}
+        alt="Aerial view of campus"
+        caption="Nyerere Campus, UDSM"
+        title="One campus, many small rooms of prayer"
+        body="Nyerere Campus holds thousands of students. Scattered across its halls are prayer bands, study circles and choirs that make up one TUCASA family."
+      />
 
       <section className="px-6 py-20 pb-24 sm:px-12 lg:px-16">
         <FromBelow>

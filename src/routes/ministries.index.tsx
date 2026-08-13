@@ -37,6 +37,8 @@ function MinistriesPage() {
         src={img.media}
         alt="Media team filming and streaming a campus service"
         caption="Many pieces · One body"
+        title="Many gifts, one body"
+        body="Media, music, prayer, welfare, outreach — each ministry is a piece, and together they form the picture of a serving church on campus."
       />
 
       <section className="px-6 py-20 pb-24 sm:px-12 lg:px-16">

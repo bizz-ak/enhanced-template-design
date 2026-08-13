@@ -160,6 +160,8 @@ function Index() {
         src={img.worship}
         alt="Students worshipping together during Friday vespers"
         caption="Worship · Nyerere Campus"
+        title="Many pieces, one worship"
+        body="Different courses, regions and languages — yet every Friday evening the pieces come together into one congregation of students."
       />
 
       <section className="px-6 py-20 sm:px-12 lg:px-16">
@@ -226,6 +228,8 @@ function Index() {
         src={img.outreach}
         alt="Students distributing food and clothing during a community outreach"
         caption="Service · Beyond the campus gate"
+        title="Faith that leaves the campus"
+        body="What we receive in worship we carry outside: food drives, hospital visits, free tutoring and community health days across Dar es Salaam."
       />
 
       <section className="px-6 pb-4 sm:px-12 lg:px-16">
