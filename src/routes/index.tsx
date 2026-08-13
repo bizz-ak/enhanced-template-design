@@ -9,7 +9,6 @@ import {
   PinnedScene,
   ShatterImage,
   AssembleImage,
-  ScrollGallery,
   CurtainImage,
   FromBelow,
   FromAbove,
@@ -22,6 +21,7 @@ import {
   SpotlightPanel,
   BlindsReveal,
 } from "@/components/motion/BackdropFx";
+import { CinemaGallery, SplitBackdrop } from "@/components/motion/CinemaFx";
 import { img, galleryImages, ministries } from "@/data/site";
 import heroImage from "@/assets/campus-hero.jpg";
 
