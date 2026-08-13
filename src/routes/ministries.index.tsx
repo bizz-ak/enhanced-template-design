@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell, PageHero } from "@/components/PageShell";
 import { Stagger, StaggerItem } from "@/components/motion/Reveal";
 import { ShatterImage, FromBelow } from "@/components/motion/ScrollFx";
+import { SplitBackdrop } from "@/components/motion/CinemaFx";
 import { img, ministries } from "@/data/site";
 
 export const Route = createFileRoute("/ministries/")({
