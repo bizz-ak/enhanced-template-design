@@ -15,6 +15,13 @@ import {
   FromAbove,
   FromSide,
 } from "@/components/motion/ScrollFx";
+import {
+  FixedBackdrop,
+  TextMaskImage,
+  ZoomThroughBackdrop,
+  SpotlightPanel,
+  BlindsReveal,
+} from "@/components/motion/BackdropFx";
 import { img, galleryImages, ministries } from "@/data/site";
 import heroImage from "@/assets/campus-hero.jpg";
 
