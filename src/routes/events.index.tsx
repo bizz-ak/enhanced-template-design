@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell, PageHero } from "@/components/PageShell";
 import { Stagger, StaggerItem } from "@/components/motion/Reveal";
 import { PinnedScene, FromBelow } from "@/components/motion/ScrollFx";
+import { SplitBackdrop, DriftBackdrop } from "@/components/motion/CinemaFx";
 import { img, events } from "@/data/site";
 
 export const Route = createFileRoute("/events/")({
@@ -45,6 +46,14 @@ function EventsPage() {
         ]}
       />
 
+      <SplitBackdrop
+        src={img.bgSunrise}
+        alt="Sunrise over the campus"
+        eyebrow="Every Sabbath"
+        title="The week turns at sunset"
+        body="Friday evening the campus slows down, and by Sabbath morning the whole family is together again."
+      />
+
       <section className="px-6 py-20 pb-24 sm:px-12 lg:px-16">
         <FromBelow>
           <h2 className="font-display text-4xl font-extrabold text-gold">All programmes</h2>
@@ -73,6 +82,18 @@ function EventsPage() {
           ))}
         </Stagger>
       </section>
+    </PageShell>
+      <DriftBackdrop src={img.bgScripture} alt="Open Bible on a wooden desk">
+        <div className="max-w-xl">
+          <p className="text-xs font-bold uppercase tracking-[0.35em] text-gold">Always open</p>
+          <h2 className="mt-4 font-display text-4xl font-extrabold leading-tight">
+            Every programme starts and ends in the Word
+          </h2>
+          <p className="mt-4 leading-relaxed text-muted-foreground">
+            Dates and venues change every semester — the book we open never does.
+          </p>
+        </div>
+      </DriftBackdrop>
     </PageShell>
   );
 }

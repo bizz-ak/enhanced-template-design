@@ -72,5 +72,13 @@ function MinistriesPage() {
         </Stagger>
       </section>
     </PageShell>
+      <SplitBackdrop
+        src={img.bgSunrise}
+        alt="Sunrise over Dar es Salaam"
+        eyebrow="Pick one"
+        title="Your gift already belongs somewhere"
+        body="Sing, teach, cook, code, carry chairs — every ministry here started with one student who said yes."
+      />
+    </PageShell>
   );
 }
