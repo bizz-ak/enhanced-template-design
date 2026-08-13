@@ -129,7 +129,7 @@ function Frame({
           width={1600}
           height={1000}
           style={{ scale: innerScale }}
-          className="aspect-[4/5] w-full object-cover"
+          className="aspect-[3/4] w-full object-cover"
         />
       </div>
       <div className="absolute inset-0 bg-[linear-gradient(to_top,var(--background),transparent_55%)]" />
