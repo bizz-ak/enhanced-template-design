@@ -181,6 +181,9 @@ export function ShatterImage({
   rows = 4,
   height = "260vh",
   caption,
+  title,
+  body,
+  children,
 }: {
   src: string;
   alt: string;
@@ -188,23 +191,49 @@ export function ShatterImage({
   rows?: number;
   height?: string;
   caption?: string;
+  title?: string;
+  body?: string;
+  children?: ReactNode;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
   const p = useSpring(scrollYProgress, { stiffness: 110, damping: 26, mass: 0.4 });
   const tiles = Array.from({ length: cols * rows }, (_, i) => i);
 
+  // Content revealed behind the image as the pieces spread out
+  const contentOpacity = useTransform(p, [0.3, 0.55, 0.95], [0, 1, 1]);
+  const contentY = useTransform(p, [0.3, 0.6], [50, 0]);
+  const contentBlur = useTransform(p, [0.3, 0.6], [14, 0]);
+  const contentFilter = useTransform(contentBlur, (b) => `blur(${b}px)`);
+  const contentScale = useTransform(p, [0.3, 0.6], [0.94, 1]);
+
   return (
     <div ref={ref} style={{ height }} className="relative">
       <div className="sticky top-0 flex h-screen items-center justify-center overflow-hidden px-4">
-        <div className="relative aspect-[16/10] w-full max-w-5xl">
+        <motion.div
+          style={{ opacity: contentOpacity, y: contentY, filter: contentFilter, scale: contentScale }}
+          className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center px-6"
+        >
+          <div className="max-w-2xl text-center">
+            {children ?? (
+              <>
+                <h3 className="font-display text-3xl font-bold text-foreground md:text-5xl">
+                  {title ?? caption ?? alt}
+                </h3>
+                {body && <p className="mt-5 text-lg leading-relaxed text-muted-foreground">{body}</p>}
+              </>
+            )}
+          </div>
+        </motion.div>
+
+        <div className="relative z-10 aspect-[16/10] w-full max-w-5xl">
           <span className="sr-only">{alt}</span>
           {tiles.map((i) => (
             <Tile key={i} i={i} cols={cols} rows={rows} src={src} progress={p} mode="shatter" />
           ))}
         </div>
         {caption && (
-          <p className="pointer-events-none absolute bottom-10 left-0 right-0 text-center text-xs uppercase tracking-[0.4em] text-gold">
+          <p className="pointer-events-none absolute bottom-10 left-0 right-0 z-20 text-center text-xs uppercase tracking-[0.4em] text-gold">
             {caption}
           </p>
         )}
@@ -221,6 +250,9 @@ export function AssembleImage({
   rows = 4,
   height = "260vh",
   caption,
+  title,
+  body,
+  children,
 }: {
   src: string;
   alt: string;
@@ -228,23 +260,49 @@ export function AssembleImage({
   rows?: number;
   height?: string;
   caption?: string;
+  title?: string;
+  body?: string;
+  children?: ReactNode;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
   const p = useSpring(scrollYProgress, { stiffness: 110, damping: 26, mass: 0.4 });
   const tiles = Array.from({ length: cols * rows }, (_, i) => i);
 
+  // Content is visible first, then the assembling image covers it
+  const contentOpacity = useTransform(p, [0, 0.28, 0.55], [1, 1, 0]);
+  const contentY = useTransform(p, [0.28, 0.6], [0, -40]);
+  const contentBlur = useTransform(p, [0.28, 0.6], [0, 14]);
+  const contentFilter = useTransform(contentBlur, (b) => `blur(${b}px)`);
+  const contentScale = useTransform(p, [0.28, 0.6], [1, 0.94]);
+
   return (
     <div ref={ref} style={{ height }} className="relative">
       <div className="sticky top-0 flex h-screen items-center justify-center overflow-hidden px-4">
-        <div className="relative aspect-[16/10] w-full max-w-5xl">
+        <motion.div
+          style={{ opacity: contentOpacity, y: contentY, filter: contentFilter, scale: contentScale }}
+          className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center px-6"
+        >
+          <div className="max-w-2xl text-center">
+            {children ?? (
+              <>
+                <h3 className="font-display text-3xl font-bold text-foreground md:text-5xl">
+                  {title ?? caption ?? alt}
+                </h3>
+                {body && <p className="mt-5 text-lg leading-relaxed text-muted-foreground">{body}</p>}
+              </>
+            )}
+          </div>
+        </motion.div>
+
+        <div className="relative z-10 aspect-[16/10] w-full max-w-5xl">
           <span className="sr-only">{alt}</span>
           {tiles.map((i) => (
             <Tile key={i} i={i} cols={cols} rows={rows} src={src} progress={p} mode="assemble" />
           ))}
         </div>
         {caption && (
-          <p className="pointer-events-none absolute bottom-10 left-0 right-0 text-center text-xs uppercase tracking-[0.4em] text-gold">
+          <p className="pointer-events-none absolute bottom-10 left-0 right-0 z-20 text-center text-xs uppercase tracking-[0.4em] text-gold">
             {caption}
           </p>
         )}
@@ -252,6 +310,7 @@ export function AssembleImage({
     </div>
   );
 }
+
 
 function Tile({
   i,
@@ -289,11 +348,15 @@ function Tile({
   const outO = mode === "shatter" ? [1, 0.15] : [0.15, 1];
   const outS = mode === "shatter" ? [1, 0.75] : [0.75, 1];
 
+  const outBlur = mode === "shatter" ? [0, 12] : [12, 0];
+
   const x = useTransform(progress, range, reduce ? [0, 0] : (outA as number[]));
   const y = useTransform(progress, range, reduce ? [0, 0] : (outB as number[]));
   const rotate = useTransform(progress, range, reduce ? [0, 0] : (outR as number[]));
   const opacity = useTransform(progress, range, reduce ? [1, 1] : (outO as number[]));
   const scale = useTransform(progress, range, reduce ? [1, 1] : (outS as number[]));
+  const blur = useTransform(progress, range, reduce ? [0, 0] : (outBlur as number[]));
+  const filter = useTransform(blur, (b) => `blur(${b}px)`);
 
   return (
     <motion.div
@@ -304,6 +367,8 @@ function Tile({
         rotate,
         opacity,
         scale,
+        filter,
+
         position: "absolute",
         left: `${(col / cols) * 100}%`,
         top: `${(row / rows) * 100}%`,
