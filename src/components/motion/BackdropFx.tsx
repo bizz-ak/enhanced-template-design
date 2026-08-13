@@ -278,8 +278,8 @@ function Slat({
   total: number;
   progress: ReturnType<typeof useSpring>;
 }) {
-  const start = (i / total) * 0.5;
-  const end = Math.min(start + 0.45, 1);
+  const start = (i / total) * 0.35;
+  const end = Math.min(start + 0.3, 1);
   const scaleY = useTransform(progress, [start, end], [1, 0]);
   return (
     <motion.div
