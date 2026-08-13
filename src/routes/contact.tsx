@@ -3,6 +3,7 @@ import { MapPin, Mail, Phone, Clock } from "lucide-react";
 import { PageShell, PageHero } from "@/components/PageShell";
 import { Stagger, StaggerItem } from "@/components/motion/Reveal";
 import { CurtainImage, FromSide } from "@/components/motion/ScrollFx";
+import { SplitBackdrop } from "@/components/motion/CinemaFx";
 import { img } from "@/data/site";
 
 export const Route = createFileRoute("/contact")({
@@ -57,6 +58,14 @@ function ContactPage() {
           <CurtainImage src={img.fellowship} alt="Students welcoming visitors" className="aspect-[4/3]" />
         </div>
       </section>
+
+      <SplitBackdrop
+        src={img.bgStainedGlass}
+        alt="Light through a stained glass window"
+        eyebrow="Visit us"
+        title="There is a seat saved for you this Sabbath"
+        body="Walk in at 8:30 AM, ask for anyone in a TUCASA badge, and you will not sit alone."
+      />
     </PageShell>
   );
 }

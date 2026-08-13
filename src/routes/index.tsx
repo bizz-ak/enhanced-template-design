@@ -9,7 +9,6 @@ import {
   PinnedScene,
   ShatterImage,
   AssembleImage,
-  ScrollGallery,
   CurtainImage,
   FromBelow,
   FromAbove,
@@ -22,6 +21,7 @@ import {
   SpotlightPanel,
   BlindsReveal,
 } from "@/components/motion/BackdropFx";
+import { CinemaGallery, SplitBackdrop } from "@/components/motion/CinemaFx";
 import { img, galleryImages, ministries } from "@/data/site";
 import heroImage from "@/assets/campus-hero.jpg";
 
@@ -301,15 +301,22 @@ function Index() {
         sub="From Friday sunset to Saturday sunset the campus changes key — light through the window, voices in harmony, rest that actually restores."
       />
 
-      <section className="py-6">
-        <FromBelow className="px-6 sm:px-12 lg:px-16">
-          <h2 className="font-display text-4xl font-extrabold text-gold">Moments from campus</h2>
-          <p className="mt-3 max-w-xl text-muted-foreground">
-            Scroll to travel through a year of worship, service and friendship.
-          </p>
-        </FromBelow>
-        <ScrollGallery images={galleryImages.slice(0, 8)} />
-      </section>
+      <CinemaGallery
+        images={galleryImages.slice(0, 8)}
+        backdrop={img.bgSunrise}
+        eyebrow="Moments from campus"
+        title="A year, one frame at a time"
+        intro="Scroll to scrub through the reel — worship, service and friendship as they actually happened."
+      />
+
+      <SplitBackdrop
+        src={img.bgCampusNight}
+        alt="Nyerere Campus at night"
+        eyebrow="After the lecture halls empty"
+        title="The campus keeps praying long after dark"
+        body="Prayer bands in the halls of residence, choir rehearsals under corridor lights, quiet study circles — the day ends the way it started."
+      />
+
 
 
       <BlindsReveal src={img.bgScripture} alt="Open Bible lit by warm light">

@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageShell, PageHero } from "@/components/PageShell";
 import { Stagger, StaggerItem } from "@/components/motion/Reveal";
 import { CurtainImage, FromSide } from "@/components/motion/ScrollFx";
+import { DriftBackdrop } from "@/components/motion/CinemaFx";
 import { img, leadership } from "@/data/site";
 
 export const Route = createFileRoute("/about/leadership")({
@@ -47,7 +48,20 @@ function LeadershipPage() {
         </div>
       </section>
 
-      <section className="px-6 pb-24 sm:px-12 lg:px-16">
+      <DriftBackdrop src={img.bgCampusNight} alt="Campus at night" tint={0.82}>
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.35em] text-gold">The team</p>
+          <h2 className="mt-4 font-display text-4xl font-extrabold leading-tight">
+            Elected by students, sustained by prayer
+          </h2>
+          <p className="mt-4 leading-relaxed text-muted-foreground">
+            Leadership here is a season of service — one academic year to carry the ministry
+            forward and hand it on stronger.
+          </p>
+        </div>
+      </DriftBackdrop>
+
+      <section className="px-6 pb-24 pt-20 sm:px-12 lg:px-16">
         <Stagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {leadership.map((l) => (
             <StaggerItem key={l.role} className="glass-panel hover-lift rounded-2xl p-7">
