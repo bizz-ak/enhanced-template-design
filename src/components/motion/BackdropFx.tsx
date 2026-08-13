@@ -12,7 +12,7 @@ export function FixedBackdrop({
   alt,
   children,
   className = "",
-  overlay = 0.72,
+  overlay = 0.42,
 }: {
   src: string;
   alt: string;
