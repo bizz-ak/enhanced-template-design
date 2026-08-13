@@ -10,6 +10,10 @@ import leaders from "@/assets/leaders.jpg";
 import fellowship from "@/assets/fellowship.jpg";
 import media from "@/assets/media.jpg";
 import campusAerial from "@/assets/campus-aerial.jpg";
+import bgSunrise from "@/assets/bg-sunrise.jpg";
+import bgStainedGlass from "@/assets/bg-stainedglass.jpg";
+import bgScripture from "@/assets/bg-scripture.jpg";
+import bgCampusNight from "@/assets/bg-campus-night.jpg";
 
 export const img = {
   worship,
@@ -24,6 +28,10 @@ export const img = {
   fellowship,
   media,
   campusAerial,
+  bgSunrise,
+  bgStainedGlass,
+  bgScripture,
+  bgCampusNight,
 };
 
 export type Ministry = {
