@@ -52,14 +52,15 @@
 :root {
   --radius: 0.75rem;
 
-  --background: oklch(0.32 0.088 250);
+  --background: oklch(0.18 0.03 252);
   --foreground: oklch(0.98 0.008 250);
 
-  --surface: oklch(0.36 0.086 248 / 55%);
-  --surface-2: oklch(0.42 0.082 246 / 45%);
+  --surface: oklch(0.3 0.05 248 / 32%);
+  --surface-2: oklch(0.38 0.05 246 / 26%);
 
-  --card: oklch(0.38 0.084 248 / 60%);
+  --card: oklch(0.3 0.05 248 / 34%);
   --card-foreground: oklch(0.98 0.008 250);
+
   --popover: oklch(0.27 0.078 252);
   --popover-foreground: oklch(0.98 0.008 250);
 
@@ -95,21 +96,29 @@
 
   --gradient-page: linear-gradient(
     160deg,
-    oklch(0.36 0.09 248) 0%,
-    oklch(0.3 0.088 252) 45%,
-    oklch(0.25 0.075 254) 100%
+    oklch(0.22 0.03 250 / 0.55) 0%,
+    oklch(0.18 0.025 252 / 0.45) 45%,
+    oklch(0.14 0.02 254 / 0.6) 100%
+  );
+  /* scrim over the site-wide photographic backdrop */
+  --gradient-ambient: linear-gradient(
+    180deg,
+    oklch(0.16 0.03 252 / 0.62) 0%,
+    oklch(0.14 0.025 254 / 0.52) 40%,
+    oklch(0.12 0.02 254 / 0.72) 100%
   );
   --gradient-hero: linear-gradient(
     100deg,
-    oklch(0.3 0.09 252 / 0.94) 0%,
-    oklch(0.36 0.095 246 / 0.82) 45%,
-    oklch(0.45 0.09 240 / 0.7) 100%
+    oklch(0.18 0.035 252 / 0.78) 0%,
+    oklch(0.2 0.04 246 / 0.5) 45%,
+    oklch(0.3 0.05 240 / 0.28) 100%
   );
+
   --gradient-gold: linear-gradient(135deg, var(--gold-soft), var(--gold));
   --gradient-sidebar: linear-gradient(
     180deg,
-    oklch(0.27 0.075 252) 0%,
-    oklch(0.22 0.062 254) 100%
+    oklch(0.2 0.04 252 / 0.72) 0%,
+    oklch(0.14 0.03 254 / 0.82) 100%
   );
 
   --shadow-soft: 0 10px 30px -12px oklch(0.15 0.05 254 / 0.65);
@@ -129,7 +138,8 @@
   }
 
   body {
-    background: var(--gradient-page);
+    background-color: oklch(0.14 0.02 254);
+    background-image: var(--gradient-page);
     background-attachment: fixed;
     color: var(--color-foreground);
     font-family: var(--font-sans);
