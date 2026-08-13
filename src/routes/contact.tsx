@@ -58,7 +58,7 @@ function ContactPage() {
           <CurtainImage src={img.fellowship} alt="Students welcoming visitors" className="aspect-[4/3]" />
         </div>
       </section>
-    </PageShell>
+
       <SplitBackdrop
         src={img.bgStainedGlass}
         alt="Light through a stained glass window"

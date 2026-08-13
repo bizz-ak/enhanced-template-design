@@ -82,7 +82,7 @@ function EventsPage() {
           ))}
         </Stagger>
       </section>
-    </PageShell>
+
       <DriftBackdrop src={img.bgScripture} alt="Open Bible on a wooden desk">
         <div className="max-w-xl">
           <p className="text-xs font-bold uppercase tracking-[0.35em] text-gold">Always open</p>

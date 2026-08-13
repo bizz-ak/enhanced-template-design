@@ -72,7 +72,7 @@ function MinistriesPage() {
           ))}
         </Stagger>
       </section>
-    </PageShell>
+
       <SplitBackdrop
         src={img.bgSunrise}
         alt="Sunrise over Dar es Salaam"
