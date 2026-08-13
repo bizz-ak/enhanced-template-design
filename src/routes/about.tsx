@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { motion } from "motion/react";
 import { SiteSidebar } from "@/components/SiteSidebar";
+import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -45,35 +47,56 @@ function About() {
       <SiteSidebar />
 
       <main className="min-w-0 flex-1 px-6 py-20 sm:px-12 lg:px-16">
-        <h1 className="animate-rise font-display text-5xl font-extrabold">
+        <motion.h1
+          initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="font-display text-5xl font-extrabold"
+        >
           About <span className="text-gradient-gold">TUCASA</span>
-        </h1>
-        <p className="mt-5 max-w-2xl leading-relaxed text-muted-foreground">
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-5 max-w-2xl leading-relaxed text-muted-foreground"
+        >
           TUCASA is the Tanzania University and College Adventist Student Association. At Nyerere
           Campus, University of Dar es Salaam, we bring together students who want to grow in
           faith, excel in their studies and serve the community around them.
-        </p>
+        </motion.p>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <Stagger className="mt-12 grid gap-6 md:grid-cols-3">
           {values.map((v) => (
-            <article key={v.title} className="glass-panel hover-lift rounded-2xl p-7">
+            <StaggerItem key={v.title} className="glass-panel rounded-2xl p-7">
               <h2 className="font-display text-xl font-bold text-gold">{v.title}</h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{v.text}</p>
-            </article>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
 
-        <h2 className="mt-16 font-display text-3xl font-bold">Our ministries</h2>
-        <div className="mt-6 flex flex-wrap gap-3">
+        <Reveal>
+          <h2 className="mt-16 font-display text-3xl font-bold">Our ministries</h2>
+        </Reveal>
+        <motion.div
+          className="mt-6 flex flex-wrap gap-3"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06 } } }}
+        >
           {ministries.map((m) => (
-            <span
+            <motion.span
               key={m}
-              className="rounded-full border border-border bg-surface-2 px-4 py-2 text-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-gold/60 hover:text-gold"
+              variants={{ hidden: { opacity: 0, scale: 0.85, y: 12 }, show: { opacity: 1, scale: 1, y: 0 } }}
+              whileHover={{ y: -4, scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300, damping: 18 }}
+              className="rounded-full border border-border bg-surface-2 px-4 py-2 text-sm hover:border-gold/60 hover:text-gold"
             >
               {m}
-            </span>
+            </motion.span>
           ))}
-        </div>
+        </motion.div>
 
         <footer className="mt-20 border-t border-border pt-8 text-xs text-muted-foreground">
           © {new Date().getFullYear()} TUCASA Nyerere Campus, University of Dar es Salaam.
