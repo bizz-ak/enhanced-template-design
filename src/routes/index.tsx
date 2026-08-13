@@ -259,6 +259,24 @@ function Index() {
         </Reveal>
       </section>
 
+
+      <FixedBackdrop
+        src={img.bgSunrise}
+        alt="Golden sunrise over the horizon"
+        className="my-4"
+      >
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.35em] text-gold">Morning by morning</p>
+          <blockquote className="mt-6 font-display text-3xl font-extrabold leading-tight sm:text-5xl">
+            &ldquo;They that wait upon the Lord shall renew their strength; they shall mount up with
+            wings as eagles.&rdquo;
+          </blockquote>
+          <p className="mt-5 text-sm font-semibold tracking-widest text-muted-foreground">
+            ISAIAH 40:31
+          </p>
+        </div>
+      </FixedBackdrop>
+
       <section className="px-6 py-20 sm:px-12 lg:px-16">
         <FromAbove>
           <h2 className="text-center font-display text-4xl font-extrabold text-gold">
@@ -276,6 +294,13 @@ function Index() {
         </Stagger>
       </section>
 
+
+      <TextMaskImage
+        src={img.bgStainedGlass}
+        text="SABBATH"
+        sub="From Friday sunset to Saturday sunset the campus changes key — light through the window, voices in harmony, rest that actually restores."
+      />
+
       <section className="py-6">
         <FromBelow className="px-6 sm:px-12 lg:px-16">
           <h2 className="font-display text-4xl font-extrabold text-gold">Moments from campus</h2>
@@ -284,6 +309,43 @@ function Index() {
           </p>
         </FromBelow>
         <ScrollGallery images={galleryImages.slice(0, 8)} />
+      </section>
+
+
+      <BlindsReveal src={img.bgScripture} alt="Open Bible lit by warm light">
+        <div className="max-w-xl">
+          <p className="text-xs font-bold uppercase tracking-[0.35em] text-gold">The Word first</p>
+          <h2 className="mt-4 font-display text-4xl font-extrabold leading-tight sm:text-5xl">
+            Everything we do opens with an open Bible
+          </h2>
+          <p className="mt-5 leading-relaxed text-muted-foreground">
+            Every ministry, every meeting and every outreach begins in Scripture — not with our own
+            ideas about God, but with what He has already said.
+          </p>
+        </div>
+      </BlindsReveal>
+
+      <section className="px-6 py-20 sm:px-12 lg:px-16">
+        <FromBelow>
+          <h2 className="font-display text-4xl font-extrabold text-gold">Where you will grow</h2>
+        </FromBelow>
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <SpotlightPanel
+            src={img.prayer}
+            title="Prayer bands"
+            text="Small groups in every hall of residence that meet before lectures to pray for one another."
+          />
+          <SpotlightPanel
+            src={img.bibleStudy}
+            title="Bible study"
+            text="Midweek study circles where hard questions are welcome and answers come from the Word."
+          />
+          <SpotlightPanel
+            src={img.fellowship}
+            title="Fellowship"
+            text="Shared meals, mentorship and friendships that make a big university feel like home."
+          />
+        </div>
       </section>
 
       <section className="px-6 pb-24 sm:px-12 lg:px-16">
@@ -313,6 +375,15 @@ function Index() {
           ))}
         </Stagger>
       </section>
+
+      <ZoomThroughBackdrop
+        src={img.bgCampusNight}
+        alt="Nyerere Campus at night under a starry sky"
+        eyebrow="Your place is waiting"
+        title="Come as you are — leave anchored"
+        body="Whether it is your first week at Nyerere Campus or your final year, there is a seat, a small group and a ministry with your name on it."
+      />
+
     </PageShell>
   );
 }
