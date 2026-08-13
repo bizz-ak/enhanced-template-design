@@ -159,10 +159,12 @@ function PinnedLine({
   total: number;
   children: ReactNode;
 }) {
-  const start = 0.12 + (index / total) * 0.6;
-  const opacity = useTransform(progress, [start, start + 0.12, start + 0.4, start + 0.5], [0, 1, 1, 0.25]);
-  const y = useTransform(progress, [start, start + 0.14], [40, 0]);
-  const blur = useTransform(progress, [start, start + 0.14], [8, 0]);
+  const clamp01 = (v: number) => Math.min(1, Math.max(0, v));
+  const start = clamp01(0.12 + (index / total) * 0.5);
+  const stops = [start, start + 0.1, start + 0.25, start + 0.32].map(clamp01);
+  const opacity = useTransform(progress, stops, [0, 1, 1, 0.25]);
+  const y = useTransform(progress, [start, clamp01(start + 0.12)], [40, 0]);
+  const blur = useTransform(progress, [start, clamp01(start + 0.12)], [8, 0]);
   const filter = useTransform(blur, (b) => `blur(${b}px)`);
   return (
     <motion.p style={{ opacity, y, filter }} className="text-lg leading-relaxed text-muted-foreground">
