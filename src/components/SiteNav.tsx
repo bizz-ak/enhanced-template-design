@@ -137,7 +137,7 @@ export function SiteNav() {
           onClick={() => setMobileOpen((v) => !v)}
           className="ml-auto grid size-10 place-items-center rounded-lg border border-border bg-surface lg:hidden"
         >
-          {mobileOpen ? <Menu className="size-5 text-gold" /> : <Menu className="size-5 text-gold" />}
+          {mobileOpen ? <X className="size-5 text-gold" /> : <Menu className="size-5 text-gold" />}
         </button>
       </div>
 

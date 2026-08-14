@@ -1,16 +1,16 @@
 import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
-import { SiteSidebar } from "@/components/SiteSidebar";
+import { SiteNav } from "@/components/SiteNav";
 import { AmbientBackdrop } from "@/components/motion/AmbientBackdrop";
 import { ScrollProgressBar, ParallaxImage } from "@/components/motion/ScrollFx";
 
 export function PageShell({ children }: { children: ReactNode }) {
   return (
-    <div className="flex min-h-screen flex-col lg:flex-row-reverse">
+    <div className="flex min-h-screen flex-col">
       <AmbientBackdrop />
       <ScrollProgressBar />
-      <SiteSidebar />
+      <SiteNav />
       <main className="min-w-0 flex-1">
         {children}
         <SiteFooter />
