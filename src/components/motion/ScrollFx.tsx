@@ -177,8 +177,8 @@ function PinnedLine({
 export function ShatterImage({
   src,
   alt,
-  cols = 6,
-  rows = 4,
+  cols = 4,
+  rows = 3,
   height = "260vh",
   caption,
   title,
@@ -246,8 +246,8 @@ export function ShatterImage({
 export function AssembleImage({
   src,
   alt,
-  cols = 6,
-  rows = 4,
+  cols = 4,
+  rows = 3,
   height = "260vh",
   caption,
   title,
@@ -348,15 +348,12 @@ function Tile({
   const outO = mode === "shatter" ? [1, 0.15] : [0.15, 1];
   const outS = mode === "shatter" ? [1, 0.75] : [0.75, 1];
 
-  const outBlur = mode === "shatter" ? [0, 12] : [12, 0];
 
   const x = useTransform(progress, range, reduce ? [0, 0] : (outA as number[]));
   const y = useTransform(progress, range, reduce ? [0, 0] : (outB as number[]));
   const rotate = useTransform(progress, range, reduce ? [0, 0] : (outR as number[]));
   const opacity = useTransform(progress, range, reduce ? [1, 1] : (outO as number[]));
   const scale = useTransform(progress, range, reduce ? [1, 1] : (outS as number[]));
-  const blur = useTransform(progress, range, reduce ? [0, 0] : (outBlur as number[]));
-  const filter = useTransform(blur, (b) => `blur(${b}px)`);
 
   return (
     <motion.div
@@ -367,8 +364,6 @@ function Tile({
         rotate,
         opacity,
         scale,
-        filter,
-
         position: "absolute",
         left: `${(col / cols) * 100}%`,
         top: `${(row / rows) * 100}%`,
@@ -377,6 +372,8 @@ function Tile({
         backgroundImage: `url(${src})`,
         backgroundSize: `${cols * 100}% ${rows * 100}%`,
         backgroundPosition: `${(col / Math.max(cols - 1, 1)) * 100}% ${(row / Math.max(rows - 1, 1)) * 100}%`,
+        willChange: "transform, opacity",
+        backfaceVisibility: "hidden",
       }}
     />
   );

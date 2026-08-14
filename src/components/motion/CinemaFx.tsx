@@ -112,13 +112,11 @@ function Frame({
   const scale = useTransform(p, [a, center, b], [0.86, 1.04, 0.86]);
   const y = useTransform(p, [a, center, b], [i % 2 ? 46 : -46, 0, i % 2 ? -46 : 46]);
   const opacity = useTransform(p, [a, center, b], [0.45, 1, 0.45]);
-  const blurN = useTransform(p, [a, center, b], [6, 0, 6]);
-  const filter = useTransform(blurN, (v) => `blur(${v}px)`);
   const innerScale = useTransform(p, [a, b], [1.25, 1]);
 
   return (
     <motion.figure
-      style={{ rotateY, scale, y, opacity, filter }}
+      style={{ rotateY, scale, y, opacity, willChange: "transform, opacity" }}
       className="group relative w-[76vw] shrink-0 overflow-hidden rounded-[2rem] border border-gold/25 shadow-[var(--shadow-soft)] [transform-style:preserve-3d] sm:w-[44vw] lg:w-[30vw]"
     >
       <div className="overflow-hidden">

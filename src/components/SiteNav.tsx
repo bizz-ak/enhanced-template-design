@@ -48,7 +48,7 @@ export function SiteNav() {
 
   return (
     <header
-      className="sticky top-0 z-50 border-b border-border/70 backdrop-blur-xl"
+      className="sticky top-0 z-50 border-b border-border/70 backdrop-blur-md"
       style={{ background: "var(--gradient-sidebar)" }}
     >
       <div className="mx-auto flex max-w-[1400px] items-center gap-4 px-5 py-3 lg:px-10">

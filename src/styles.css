@@ -169,7 +169,7 @@
 
 @utility glass-panel {
   background: var(--surface);
-  backdrop-filter: blur(14px);
+  backdrop-filter: blur(6px);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-soft);
 }

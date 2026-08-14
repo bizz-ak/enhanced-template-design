@@ -1,5 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import {
+  AnimatePresence,
+  motion,
+  useMotionTemplate,
+  useMotionValue,
+  useReducedMotion,
+  useTransform,
+} from "motion/react";
 import { useRouterState } from "@tanstack/react-router";
 import { img } from "@/data/site";
 
@@ -47,7 +54,7 @@ export function AmbientBackdrop() {
 
   const [index, setIndex] = useState(0);
   const [override, setOverride] = useState<string | null>(null);
-  const [hue, setHue] = useState(0);
+  const hue = useMotionValue(0);
   const ticking = useRef(false);
 
   useEffect(() => {
@@ -64,8 +71,9 @@ export function AmbientBackdrop() {
         ticking.current = false;
         const max = document.documentElement.scrollHeight - window.innerHeight;
         const p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
-        setIndex(Math.min(frames.length - 1, Math.floor(p * frames.length)));
-        setHue(p);
+        const next = Math.min(frames.length - 1, Math.floor(p * frames.length));
+        setIndex((cur) => (cur === next ? cur : next));
+        hue.set(p);
       });
     };
     onScroll();
@@ -75,7 +83,7 @@ export function AmbientBackdrop() {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
     };
-  }, [frames]);
+  }, [frames, hue]);
 
   /* sections may claim their own photo via data-ambient="worship" */
   useEffect(() => {
@@ -103,6 +111,10 @@ export function AmbientBackdrop() {
     return () => io.disconnect();
   }, [pathname]);
 
+  const hazeX = useTransform(hue, [0, 1], ["20%", "80%"]);
+  const hazeY = useTransform(hue, [0, 1], ["85%", "15%"]);
+  const haze = useMotionTemplate`radial-gradient(70% 55% at ${hazeX} ${hazeY}, color-mix(in oklab, var(--gold) 16%, transparent), transparent 70%)`;
+
   const src = override ?? frames[index] ?? frames[0];
   const move = moves[(override ? frames.length + index : index) % moves.length]!;
 
@@ -118,7 +130,7 @@ export function AmbientBackdrop() {
             opacity: { duration: 1.3, ease: [0.22, 1, 0.36, 1] },
             default: { duration: reduce ? 0 : 16, ease: "linear" },
           }}
-          className="absolute inset-0 bg-cover bg-center will-change-transform"
+          className="absolute inset-0 bg-cover bg-center will-change-transform [backface-visibility:hidden]"
           style={{ backgroundImage: `url(${src})` }}
         />
       </AnimatePresence>
@@ -127,15 +139,10 @@ export function AmbientBackdrop() {
       <div className="absolute inset-0" style={{ background: "var(--gradient-ambient)" }} />
 
       {/* gold haze that travels as you scroll, so the light keeps changing */}
-      <div
-        className="absolute inset-0 transition-[background] duration-700"
-        style={{
-          background: `radial-gradient(70% 55% at ${20 + hue * 60}% ${85 - hue * 70}%, color-mix(in oklab, var(--gold) 16%, transparent), transparent 70%)`,
-        }}
-      />
+      <motion.div className="absolute inset-0" style={{ background: haze }} />
 
       {/* film grain */}
-      <div className="absolute inset-0 opacity-[0.1] mix-blend-overlay [background-image:repeating-linear-gradient(0deg,transparent_0_2px,color-mix(in_oklab,var(--foreground)_45%,transparent)_2px_3px)]" />
+      <div className="absolute inset-0 opacity-[0.07] [background-image:repeating-linear-gradient(0deg,transparent_0_2px,color-mix(in_oklab,var(--foreground)_45%,transparent)_2px_3px)]" />
     </div>
   );
 }
