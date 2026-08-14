@@ -142,7 +142,7 @@ export function AmbientBackdrop() {
       <motion.div className="absolute inset-0" style={{ background: haze }} />
 
       {/* film grain */}
-      <div className="absolute inset-0 opacity-[0.1] mix-blend-overlay [background-image:repeating-linear-gradient(0deg,transparent_0_2px,color-mix(in_oklab,var(--foreground)_45%,transparent)_2px_3px)]" />
+      <div className="absolute inset-0 opacity-[0.07] [background-image:repeating-linear-gradient(0deg,transparent_0_2px,color-mix(in_oklab,var(--foreground)_45%,transparent)_2px_3px)]" />
     </div>
   );
 }
