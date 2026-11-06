@@ -293,6 +293,57 @@ function Index() {
         </Stagger>
       </section>
 
+      <section className="px-6 py-20 sm:px-12 lg:px-16">
+        <FromAbove>
+          <p className="text-center text-xs font-bold uppercase tracking-[0.35em] text-gold">
+            Every single day
+          </p>
+          <h2 className="mt-3 text-center font-display text-4xl font-extrabold text-gold">
+            {worshipSchedule.title}
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
+            {worshipSchedule.intro}
+          </p>
+        </FromAbove>
+        <Stagger className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {worshipSchedule.times.map((t) => (
+            <StaggerItem key={t.label} className="glass-panel hover-lift rounded-2xl p-7">
+              <Clock className="size-6 text-gold" aria-hidden />
+              <h3 className="mt-4 font-display text-xl font-bold">{t.label}</h3>
+              <p className="mt-2 font-display text-2xl font-extrabold text-gold">{t.time}</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t.note}</p>
+            </StaggerItem>
+          ))}
+          <StaggerItem className="glass-panel hover-lift rounded-2xl p-7">
+            <MapPin className="size-6 text-gold" aria-hidden />
+            <h3 className="mt-4 font-display text-xl font-bold">Where we meet</h3>
+            <ul className="mt-3 space-y-3">
+              {worshipSchedule.venues.map((v) => (
+                <li key={v.days}>
+                  <p className="font-semibold">{v.place}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {v.days} · {v.detail}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </StaggerItem>
+        </Stagger>
+        <FromBelow className="mt-8">
+          <div className="glass-panel mx-auto flex max-w-2xl items-start gap-4 rounded-2xl p-6">
+            <Flame className="mt-0.5 size-6 shrink-0 text-gold" aria-hidden />
+            <div>
+              <h3 className="font-display text-lg font-bold">
+                {worshipSchedule.prayerDay.day} — Day of Prayer
+              </h3>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                {worshipSchedule.prayerDay.text}
+              </p>
+            </div>
+          </div>
+        </FromBelow>
+      </section>
+
 
       <TextMaskImage
         src={img.bgStainedGlass}
