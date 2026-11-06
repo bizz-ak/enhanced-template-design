@@ -68,9 +68,7 @@ function MinistryDetail() {
             </ul>
           </FromSide>
           <FromSide dir="right" className="glass-panel h-fit rounded-2xl p-7">
-            <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold">Meeting time</p>
-            <p className="mt-2 font-semibold">{ministry.meeting}</p>
-            <p className="mt-6 text-xs font-bold uppercase tracking-[0.25em] text-gold">Led by</p>
+            <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold">Led by</p>
             <p className="mt-2 font-semibold">{ministry.leader}</p>
             <Link
               to="/join"

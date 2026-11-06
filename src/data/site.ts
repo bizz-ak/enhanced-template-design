@@ -42,7 +42,6 @@ export type Ministry = {
   image: string;
   intro: string;
   focus: string[];
-  meeting: string;
   leader: string;
 };
 
@@ -60,7 +59,6 @@ export const ministries: Ministry[] = [
       "Prayer bands and the week of prayer",
       "Baptismal classes and new-member follow-up",
     ],
-    meeting: "Sabbath School: every Sabbath, 8:30 AM",
     leader: "Spiritual Affairs Coordinator",
   },
   {
@@ -76,7 +74,6 @@ export const ministries: Ministry[] = [
       "Voice training and musical instruments",
       "Concerts and song recording",
     ],
-    meeting: "Rehearsals: Tuesday and Thursday, 7:00 PM",
     leader: "Music Coordinator",
   },
   {
@@ -92,7 +89,6 @@ export const ministries: Ministry[] = [
       "Announcements and event banners",
       "Sound systems",
     ],
-    meeting: "Planning meeting: Sunday, 4:00 PM",
     leader: "Communication Secretary",
   },
   {
@@ -108,10 +104,35 @@ export const ministries: Ministry[] = [
       "Good nutrition and healthy living",
       "Member wellbeing and mental health",
     ],
-    meeting: "Health camp: every semester",
     leader: "Health Coordinator",
   },
 ];
+
+export const worshipSchedule = {
+  title: "Daily Worship",
+  intro:
+    "At TUCASA Nyerere Campus UDSM we worship together every single day. Everyone is welcome — come as you are.",
+  times: [
+    {
+      label: "Monday – Friday",
+      time: "8:00 PM – 9:00 PM",
+      note: "Evening worship every weekday",
+    },
+    {
+      label: "Saturday, Sunday & Public Holidays",
+      time: "7:00 PM – 8:00 PM",
+      note: "Evening worship on weekends and holidays",
+    },
+  ],
+  venues: [
+    { days: "Saturday – Thursday", place: "ALR D", detail: "Next to Nkrumah Hall" },
+    { days: "Friday", place: "Yombo 2", detail: "Friday worship venue" },
+  ],
+  prayerDay: {
+    day: "Wednesday",
+    text: "Wednesday is our dedicated day of prayer — the whole family gathers to seek God together.",
+  },
+};
 
 export type EventItem = {
   slug: string;
