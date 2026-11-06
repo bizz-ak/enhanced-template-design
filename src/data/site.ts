@@ -108,6 +108,32 @@ export const ministries: Ministry[] = [
   },
 ];
 
+export const worshipSchedule = {
+  title: "Daily Worship",
+  intro:
+    "At TUCASA Nyerere Campus UDSM we worship together every single day. Everyone is welcome — come as you are.",
+  times: [
+    {
+      label: "Monday – Friday",
+      time: "8:00 PM – 9:00 PM",
+      note: "Evening worship every weekday",
+    },
+    {
+      label: "Saturday, Sunday & Public Holidays",
+      time: "7:00 PM – 8:00 PM",
+      note: "Evening worship on weekends and holidays",
+    },
+  ],
+  venues: [
+    { days: "Saturday – Thursday", place: "ALR D", detail: "Next to Nkrumah Hall" },
+    { days: "Friday", place: "Yombo 2", detail: "Friday worship venue" },
+  ],
+  prayerDay: {
+    day: "Wednesday",
+    text: "Wednesday is our dedicated day of prayer — the whole family gathers to seek God together.",
+  },
+};
+
 export type EventItem = {
   slug: string;
   title: string;
