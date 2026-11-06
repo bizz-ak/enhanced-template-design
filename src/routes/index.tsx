@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { HeartHandshake, Users, Sparkles, CalendarDays, Music, HandHeart } from "lucide-react";
+import { HeartHandshake, Users, Sparkles, CalendarDays, Music, HandHeart, Clock, MapPin, Flame } from "lucide-react";
 import { motion, useScroll, useTransform, useReducedMotion } from "motion/react";
 import { useRef } from "react";
 import { PageShell } from "@/components/PageShell";
@@ -21,7 +21,7 @@ import {
   BlindsReveal,
 } from "@/components/motion/BackdropFx";
 import { CinemaGallery, SplitBackdrop } from "@/components/motion/CinemaFx";
-import { img, galleryImages, ministries } from "@/data/site";
+import { img, galleryImages, ministries, worshipSchedule } from "@/data/site";
 const heroImage = img.campusBuilding;
 
 export const Route = createFileRoute("/")({
