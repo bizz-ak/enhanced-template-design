@@ -1,6 +1,6 @@
 /*
- * Picha zote hapa hazina watu (majengo, vyombo, mandhari).
- * Kubadilisha picha: weka faili jipya src/assets/ kisha badili import husika tu.
+ * All images here contain no people (buildings, instruments, scenery).
+ * To change an image: drop a new file in src/assets/ then update the matching import only.
  */
 import campusBuilding from "@/assets/campus-building.jpg";
 import sanctuary from "@/assets/sanctuary.jpg";
@@ -49,67 +49,67 @@ export type Ministry = {
 export const ministries: Ministry[] = [
   {
     slug: "kiroho",
-    name: "Idara ya Mambo ya Kiroho",
-    tagline: "Uinjilisti, Shule ya Sabato na makuzi ya kiroho",
+    name: "Spiritual Affairs Department",
+    tagline: "Evangelism, Sabbath School and spiritual growth",
     image: sanctuary,
     intro:
-      "Idara ya Mambo ya Kiroho ya TUCASA Nyerere Campus UDSM inaongoza uinjilisti, Shule ya Sabato na makuzi ya kiroho ya wanafunzi kampasini — ili kila mwanafunzi akue katika imani wakati wa masomo yake.",
+      "The Spiritual Affairs Department of TUCASA Nyerere Campus UDSM leads evangelism, Sabbath School and the spiritual growth of students on campus — so that every student matures in faith throughout their studies.",
     focus: [
-      "Uinjilisti kampasini na mikutano ya injili",
-      "Shule ya Sabato na masomo ya Biblia",
-      "Vikundi vya maombi na wiki ya maombi",
-      "Madarasa ya ubatizo na ufuatiliaji wa waumini wapya",
+      "Campus evangelism and gospel campaigns",
+      "Sabbath School and Bible study",
+      "Prayer bands and the week of prayer",
+      "Baptismal classes and new-member follow-up",
     ],
-    meeting: "Shule ya Sabato: kila Sabato, 8:30 asubuhi",
-    leader: "Mratibu wa Mambo ya Kiroho",
+    meeting: "Sabbath School: every Sabbath, 8:30 AM",
+    leader: "Spiritual Affairs Coordinator",
   },
   {
     slug: "muziki",
-    name: "Idara ya Muziki",
-    tagline: "TUCASA Nyerere Campus Choir na vikundi vya uimbaji",
+    name: "Music Department",
+    tagline: "TUCASA Nyerere Campus Choir and singing groups",
     image: musicStage,
     intro:
-      "Idara ya Muziki ndiyo nyumbani kwa Kwaya ya TUCASA Nyerere Campus (TUCASA Nyerere Campus Choir) pamoja na vikundi vya uimbaji vya kampasi. Tunaongoza ibada, tunarekodi nyimbo za injili na kuhudumu makanisani Dar es Salaam.",
+      "The Music Department is home to the TUCASA Nyerere Campus Choir and the campus singing groups. We lead worship, record gospel songs and minister in churches across Dar es Salaam.",
     focus: [
       "TUCASA Nyerere Campus Choir",
-      "Vikundi vya uimbaji (quartets, vikundi vidogo)",
-      "Mafunzo ya sauti na vyombo vya muziki",
-      "Matamasha na kurekodi nyimbo",
+      "Singing groups (quartets, small groups)",
+      "Voice training and musical instruments",
+      "Concerts and song recording",
     ],
-    meeting: "Mazoezi: Jumanne na Alhamisi, saa 1:00 usiku",
-    leader: "Mratibu wa Muziki",
+    meeting: "Rehearsals: Tuesday and Thursday, 7:00 PM",
+    leader: "Music Coordinator",
   },
   {
     slug: "mawasiliano",
-    name: "Idara ya Mawasiliano",
-    tagline: "Media, mitandao ya kijamii, matangazo na sound system",
+    name: "Communication Department",
+    tagline: "Media, social platforms, announcements and sound systems",
     image: mediaBooth,
     intro:
-      "Idara ya Mawasiliano ya TUCASA Nyerere Campus UDSM inasimamia media, mitandao ya kijamii, matangazo na mifumo ya sauti (sound system) ili ujumbe ufike mbali zaidi ya kampasi.",
+      "The Communication Department of TUCASA Nyerere Campus UDSM oversees media, social platforms, announcements and sound systems so that the message reaches far beyond the campus.",
     focus: [
-      "Media: picha, video na livestream",
-      "Mitandao ya kijamii",
-      "Matangazo na mabango ya matukio",
-      "Mifumo ya sauti (Sound system)",
+      "Media: photography, video and livestream",
+      "Social media platforms",
+      "Announcements and event banners",
+      "Sound systems",
     ],
-    meeting: "Kikao cha mipango: Jumapili, saa 10:00 jioni",
-    leader: "Katibu wa Mawasiliano",
+    meeting: "Planning meeting: Sunday, 4:00 PM",
+    leader: "Communication Secretary",
   },
   {
     slug: "afya",
-    name: "Idara ya Afya",
-    tagline: "Huduma ya kwanza, afya ya jamii na ustawi",
+    name: "Health Department",
+    tagline: "First aid, community health and wellbeing",
     image: healthKit,
     intro:
-      "Idara ya Afya inahudumia huduma ya kwanza, afya ya jamii na ustawi wa wanachama wa TUCASA Nyerere Campus UDSM kwa kuishi kanuni za afya za Kiadventista.",
+      "The Health Department serves first aid, community health and the wellbeing of TUCASA Nyerere Campus UDSM members by living out Adventist health principles.",
     focus: [
-      "Huduma ya kwanza (First Aid)",
-      "Afya ya jamii na upimaji wa bure",
-      "Lishe bora na maisha yenye afya",
-      "Ustawi wa wanachama na afya ya akili",
+      "First aid",
+      "Community health and free screening",
+      "Good nutrition and healthy living",
+      "Member wellbeing and mental health",
     ],
-    meeting: "Kambi ya afya: kila muhula",
-    leader: "Mratibu wa Afya",
+    meeting: "Health camp: every semester",
+    leader: "Health Coordinator",
   },
 ];
 
@@ -194,15 +194,6 @@ export const galleryImages = [
   { src: img.media, alt: "Media team filming a service", label: "Media Team" },
   { src: img.crusade, alt: "Students at an evening meeting", label: "Campus Crusade" },
   { src: img.campusAerial, alt: "Aerial view of the campus at sunset", label: "Nyerere Campus" },
-];
-
-export const beliefs = [
-  { title: "The Holy Scriptures", text: "The Bible is God's written Word, the trustworthy revelation of His will." },
-  { title: "The Trinity", text: "One God: Father, Son and Holy Spirit — a unity of three co-eternal Persons." },
-  { title: "Salvation in Christ", text: "By grace through faith in Jesus, who died and rose for our redemption." },
-  { title: "The Sabbath", text: "The seventh day is a memorial of creation and a weekly gift of rest in Christ." },
-  { title: "Christian Living", text: "Body, mind and spirit belong to God — a lifestyle of health and integrity." },
-  { title: "The Second Coming", text: "Jesus will return literally and visibly — our blessed hope and motivation." },
 ];
 
 export const leadership = [
