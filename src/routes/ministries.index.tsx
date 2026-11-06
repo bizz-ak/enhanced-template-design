@@ -15,7 +15,7 @@ export const Route = createFileRoute("/ministries/")({
           "Music, prayer, Bible study, outreach, health, media, welfare and evangelism — find the TUCASA ministry where you belong.",
       },
       { property: "og:title", content: "TUCASA Ministries" },
-      { property: "og:description", content: "Idara nne za TUCASA Nyerere Campus UDSM: Kiroho, Muziki, Mawasiliano na Afya." },
+      { property: "og:description", content: "The four departments of TUCASA Nyerere Campus UDSM: Spiritual Affairs, Music, Communication and Health." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -44,7 +44,7 @@ function MinistriesPage() {
 
       <section className="px-6 py-20 pb-24 sm:px-12 lg:px-16">
         <FromBelow>
-          <h2 className="font-display text-4xl font-extrabold text-gold">Idara za TUCASA Nyerere Campus UDSM</h2>
+          <h2 className="font-display text-4xl font-extrabold text-gold">Departments of TUCASA Nyerere Campus UDSM</h2>
         </FromBelow>
         <Stagger className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {ministries.map((m) => (
