@@ -1,9 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell, PageHero } from "@/components/PageShell";
-import { Stagger, StaggerItem } from "@/components/motion/Reveal";
-import { PinnedScene, FromBelow } from "@/components/motion/ScrollFx";
+import { PinnedScene } from "@/components/motion/ScrollFx";
 import { TextMaskImage, FixedBackdrop } from "@/components/motion/BackdropFx";
-import { img, beliefs } from "@/data/site";
+import { img } from "@/data/site";
 
 export const Route = createFileRoute("/beliefs")({
   head: () => ({
@@ -45,20 +44,6 @@ function BeliefsPage() {
           "What we believe shapes how we live, study and serve.",
         ]}
       />
-
-      <section className="px-6 py-20 pb-24 sm:px-12 lg:px-16">
-        <FromBelow>
-          <h2 className="font-display text-4xl font-extrabold text-gold">Core beliefs</h2>
-        </FromBelow>
-        <Stagger className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {beliefs.map((b) => (
-            <StaggerItem key={b.title} className="glass-panel hover-lift rounded-2xl p-7">
-              <h3 className="font-display text-xl font-bold text-gold">{b.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{b.text}</p>
-            </StaggerItem>
-          ))}
-        </Stagger>
-      </section>
 
       <TextMaskImage
         src={img.bgStainedGlass}

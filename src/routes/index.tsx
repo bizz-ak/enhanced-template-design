@@ -73,7 +73,7 @@ const activities = [
 
 const stats = [
   { value: "500+", label: "Active members" },
-  { value: "4", label: "Idara" },
+  { value: "4", label: "Departments" },
   { value: "40+", label: "Events yearly" },
   { value: "1979", label: "Since" },
 ];
@@ -331,29 +331,6 @@ function Index() {
           </p>
         </div>
       </BlindsReveal>
-
-      <section className="px-6 py-20 sm:px-12 lg:px-16">
-        <FromBelow>
-          <h2 className="font-display text-4xl font-extrabold text-gold">Where you will grow</h2>
-        </FromBelow>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          <SpotlightPanel
-            src={img.prayer}
-            title="Prayer bands"
-            text="Small groups in every hall of residence that meet before lectures to pray for one another."
-          />
-          <SpotlightPanel
-            src={img.bibleStudy}
-            title="Bible study"
-            text="Midweek study circles where hard questions are welcome and answers come from the Word."
-          />
-          <SpotlightPanel
-            src={img.fellowship}
-            title="Fellowship"
-            text="Shared meals, mentorship and friendships that make a big university feel like home."
-          />
-        </div>
-      </section>
 
       <section className="px-6 pb-24 sm:px-12 lg:px-16">
         <FromBelow>
