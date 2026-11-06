@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, X, ChevronDown, BookOpen } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
+import pcmLogo from "@/assets/pcm-logo.png.asset.json";
+import sdaLogo from "@/assets/sda-logo.png.asset.json";
 
 type NavItem = { to: string; label: string; children?: { to: string; label: string }[] };
 
@@ -53,9 +55,29 @@ export function SiteNav() {
       style={{ background: "var(--gradient-sidebar)" }}
     >
       <div className="mx-auto flex max-w-[1400px] items-center gap-4 px-5 py-3 lg:px-10">
-        <Link to="/" className="flex items-center gap-3">
-          <span className="grid size-10 place-items-center rounded-full border border-gold/50 bg-surface-2">
-            <BookOpen className="size-5 text-gold" aria-hidden />
+        <Link to="/" className="group flex items-center gap-3">
+          <span className="flex items-center gap-2">
+            <motion.img
+              src={sdaLogo.url}
+              alt="Seventh-day Adventist Church logo"
+              width={40}
+              height={40}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              className="size-10 object-contain drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)] transition-transform duration-300 group-hover:-rotate-3 group-hover:scale-105"
+            />
+            <span className="h-8 w-px bg-gold/40" aria-hidden />
+            <motion.img
+              src={pcmLogo.url}
+              alt="PCM logo"
+              width={40}
+              height={40}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+              className="size-10 object-contain drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)] transition-transform duration-300 group-hover:rotate-3 group-hover:scale-105"
+            />
           </span>
           <span className="leading-tight">
             <span className="block font-display text-base font-extrabold tracking-widest">TUCASA</span>

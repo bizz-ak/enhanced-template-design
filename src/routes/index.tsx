@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { HeartHandshake, Users, Sparkles, CalendarDays, Music, HandHeart, Clock, MapPin, Flame } from "lucide-react";
+import { CalendarDays, Music, HandHeart, Clock, MapPin, Flame } from "lucide-react";
 import { motion, useScroll, useTransform, useReducedMotion } from "motion/react";
 import { useRef } from "react";
 import { PageShell } from "@/components/PageShell";
@@ -45,24 +45,6 @@ export const Route = createFileRoute("/")({
   }),
   component: Index,
 });
-
-const pillars = [
-  {
-    title: "FAITH",
-    icon: Sparkles,
-    text: "Weekly worship, Bible study and prayer bands that keep your walk with God alive through every semester.",
-  },
-  {
-    title: "COMMUNITY",
-    icon: Users,
-    text: "A family away from home — mentorship, study groups and friendships built on shared values.",
-  },
-  {
-    title: "SERVICE",
-    icon: HeartHandshake,
-    text: "Outreach, community projects and mission trips that put our faith into practical action.",
-  },
-];
 
 const activities = [
   { title: "Friday Vespers", icon: Music, text: "Songs, testimonies and the Word every Friday evening." },
@@ -169,31 +151,6 @@ function Index() {
         title="Many pieces, one worship"
         body="Different courses, regions and languages — yet every Friday evening the pieces come together into one congregation of students."
       />
-
-      <section className="px-6 py-20 sm:px-12 lg:px-16">
-        <Reveal>
-          <h2 className="text-center font-display text-4xl font-extrabold text-gold">
-            Why Join TUCASA?
-          </h2>
-        </Reveal>
-        <Stagger className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {pillars.map((p) => (
-            <StaggerItem key={p.title} className="glass-panel group rounded-2xl p-8 text-center">
-              <motion.div
-                whileHover={{ rotate: 8, scale: 1.12 }}
-                transition={{ type: "spring", stiffness: 300, damping: 15 }}
-                className="mx-auto grid size-14 place-items-center rounded-full bg-surface-2"
-              >
-                <p.icon className="size-6 text-gold" aria-hidden />
-              </motion.div>
-              <h3 className="mt-5 font-display text-2xl font-extrabold tracking-wide text-gold">
-                {p.title}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.text}</p>
-            </StaggerItem>
-          ))}
-        </Stagger>
-      </section>
 
       <PinnedScene
         src={img.bibleStudy}
