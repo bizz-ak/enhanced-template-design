@@ -23,7 +23,7 @@ import {
 } from "@/components/motion/BackdropFx";
 import { CinemaGallery, SplitBackdrop } from "@/components/motion/CinemaFx";
 import { img, galleryImages, ministries } from "@/data/site";
-import heroImage from "@/assets/campus-hero.jpg";
+const heroImage = img.campusBuilding;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -73,7 +73,7 @@ const activities = [
 
 const stats = [
   { value: "500+", label: "Active members" },
-  { value: "12", label: "Ministries" },
+  { value: "4", label: "Idara" },
   { value: "40+", label: "Events yearly" },
   { value: "1979", label: "Since" },
 ];
@@ -220,7 +220,7 @@ function Index() {
             </p>
             <Link
               to="/ministries/$slug"
-              params={{ slug: "music" }}
+              params={{ slug: "muziki" }}
               className="underline-sweep mt-6 inline-block font-semibold text-gold"
             >
               Explore the choir →
@@ -360,7 +360,7 @@ function Index() {
           <h2 className="font-display text-4xl font-extrabold text-gold">Find your ministry</h2>
         </FromBelow>
         <Stagger className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {ministries.slice(0, 6).map((m) => (
+          {ministries.map((m) => (
             <StaggerItem key={m.slug} className="glass-panel hover-lift overflow-hidden rounded-2xl">
               <Link to="/ministries/$slug" params={{ slug: m.slug }} className="group block">
                 <div className="overflow-hidden">

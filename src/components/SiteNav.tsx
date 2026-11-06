@@ -19,11 +19,12 @@ const navLinks: NavItem[] = [
   { to: "/beliefs", label: "What We Believe" },
   {
     to: "/ministries",
-    label: "Ministries",
+    label: "Idara",
     children: [
-      { to: "/ministries/music", label: "Music & Choir" },
-      { to: "/ministries/prayer", label: "Prayer Bands" },
-      { to: "/ministries/outreach", label: "Outreach" },
+      { to: "/ministries/kiroho", label: "Mambo ya Kiroho" },
+      { to: "/ministries/muziki", label: "Muziki (Choir)" },
+      { to: "/ministries/mawasiliano", label: "Mawasiliano" },
+      { to: "/ministries/afya", label: "Afya" },
     ],
   },
   {
