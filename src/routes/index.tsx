@@ -18,7 +18,6 @@ import {
   FixedBackdrop,
   TextMaskImage,
   ZoomThroughBackdrop,
-  SpotlightPanel,
   BlindsReveal,
 } from "@/components/motion/BackdropFx";
 import { CinemaGallery, SplitBackdrop } from "@/components/motion/CinemaFx";
