@@ -1,32 +1,33 @@
-import worship from "@/assets/worship.jpg";
-import choir from "@/assets/choir.jpg";
-import bibleStudy from "@/assets/bible-study.jpg";
-import outreach from "@/assets/outreach.jpg";
-import baptism from "@/assets/baptism.jpg";
-import prayer from "@/assets/prayer.jpg";
-import health from "@/assets/health.jpg";
-import crusade from "@/assets/crusade.jpg";
-import leaders from "@/assets/leaders.jpg";
-import fellowship from "@/assets/fellowship.jpg";
-import media from "@/assets/media.jpg";
+/*
+ * Picha zote hapa hazina watu (majengo, vyombo, mandhari).
+ * Kubadilisha picha: weka faili jipya src/assets/ kisha badili import husika tu.
+ */
+import campusBuilding from "@/assets/campus-building.jpg";
+import sanctuary from "@/assets/sanctuary.jpg";
+import musicStage from "@/assets/music-stage.jpg";
+import mediaBooth from "@/assets/media-booth.jpg";
+import healthKit from "@/assets/health-kit.jpg";
 import campusAerial from "@/assets/campus-aerial.jpg";
 import bgSunrise from "@/assets/bg-sunrise.jpg";
 import bgStainedGlass from "@/assets/bg-stainedglass.jpg";
 import bgScripture from "@/assets/bg-scripture.jpg";
 import bgCampusNight from "@/assets/bg-campus-night.jpg";
 
+export const CAMPUS_NAME = "TUCASA Nyerere Campus UDSM";
+
 export const img = {
-  worship,
-  choir,
-  bibleStudy,
-  outreach,
-  baptism,
-  prayer,
-  health,
-  crusade,
-  leaders,
-  fellowship,
-  media,
+  campusBuilding,
+  worship: sanctuary,
+  choir: musicStage,
+  bibleStudy: bgScripture,
+  outreach: bgSunrise,
+  baptism: bgSunrise,
+  prayer: bgStainedGlass,
+  health: healthKit,
+  crusade: bgCampusNight,
+  leaders: campusBuilding,
+  fellowship: sanctuary,
+  media: mediaBooth,
   campusAerial,
   bgSunrise,
   bgStainedGlass,
@@ -47,92 +48,68 @@ export type Ministry = {
 
 export const ministries: Ministry[] = [
   {
-    slug: "music",
-    name: "Music & Choir",
-    tagline: "Kwaya na muziki wa injili",
-    image: choir,
+    slug: "kiroho",
+    name: "Idara ya Mambo ya Kiroho",
+    tagline: "Uinjilisti, Shule ya Sabato na makuzi ya kiroho",
+    image: sanctuary,
     intro:
-      "Our choir and instrumentalists lead campus worship, record original Swahili gospel music and minister at churches around Dar es Salaam.",
-    focus: ["Sabbath worship leading", "Voice training clinics", "Annual gospel concert", "Studio recordings"],
-    meeting: "Rehearsals: Tuesday & Thursday, 7:00 PM",
-    leader: "Music Coordinator",
+      "Idara ya Mambo ya Kiroho ya TUCASA Nyerere Campus UDSM inaongoza uinjilisti, Shule ya Sabato na makuzi ya kiroho ya wanafunzi kampasini — ili kila mwanafunzi akue katika imani wakati wa masomo yake.",
+    focus: [
+      "Uinjilisti kampasini na mikutano ya injili",
+      "Shule ya Sabato na masomo ya Biblia",
+      "Vikundi vya maombi na wiki ya maombi",
+      "Madarasa ya ubatizo na ufuatiliaji wa waumini wapya",
+    ],
+    meeting: "Shule ya Sabato: kila Sabato, 8:30 asubuhi",
+    leader: "Mratibu wa Mambo ya Kiroho",
   },
   {
-    slug: "prayer",
-    name: "Prayer Bands",
-    tagline: "Vikundi vya maombi",
-    image: prayer,
+    slug: "muziki",
+    name: "Idara ya Muziki",
+    tagline: "TUCASA Nyerere Campus Choir na vikundi vya uimbaji",
+    image: musicStage,
     intro:
-      "Small prayer bands meet across the halls of residence every morning and evening, carrying the burdens of students before God.",
-    focus: ["Morning devotions", "Week of prayer", "Prayer walks", "Exam season intercession"],
-    meeting: "Daily: 5:30 AM & 9:00 PM",
-    leader: "Prayer Coordinator",
+      "Idara ya Muziki ndiyo nyumbani kwa Kwaya ya TUCASA Nyerere Campus (TUCASA Nyerere Campus Choir) pamoja na vikundi vya uimbaji vya kampasi. Tunaongoza ibada, tunarekodi nyimbo za injili na kuhudumu makanisani Dar es Salaam.",
+    focus: [
+      "TUCASA Nyerere Campus Choir",
+      "Vikundi vya uimbaji (quartets, vikundi vidogo)",
+      "Mafunzo ya sauti na vyombo vya muziki",
+      "Matamasha na kurekodi nyimbo",
+    ],
+    meeting: "Mazoezi: Jumanne na Alhamisi, saa 1:00 usiku",
+    leader: "Mratibu wa Muziki",
   },
   {
-    slug: "bible-study",
-    name: "Bible Study",
-    tagline: "Kujifunza Neno",
-    image: bibleStudy,
+    slug: "mawasiliano",
+    name: "Idara ya Mawasiliano",
+    tagline: "Media, mitandao ya kijamii, matangazo na sound system",
+    image: mediaBooth,
     intro:
-      "Verse-by-verse study groups that help students think deeply, ask honest questions and build convictions that survive campus life.",
-    focus: ["Sabbath School lessons", "Doctrine deep dives", "One-to-one Bible studies", "Apologetics forums"],
-    meeting: "Wednesday, 6:30 PM",
-    leader: "Sabbath School Superintendent",
+      "Idara ya Mawasiliano ya TUCASA Nyerere Campus UDSM inasimamia media, mitandao ya kijamii, matangazo na mifumo ya sauti (sound system) ili ujumbe ufike mbali zaidi ya kampasi.",
+    focus: [
+      "Media: picha, video na livestream",
+      "Mitandao ya kijamii",
+      "Matangazo na mabango ya matukio",
+      "Mifumo ya sauti (Sound system)",
+    ],
+    meeting: "Kikao cha mipango: Jumapili, saa 10:00 jioni",
+    leader: "Katibu wa Mawasiliano",
   },
   {
-    slug: "outreach",
-    name: "Community Outreach",
-    tagline: "Huduma kwa jamii",
-    image: outreach,
+    slug: "afya",
+    name: "Idara ya Afya",
+    tagline: "Huduma ya kwanza, afya ya jamii na ustawi",
+    image: healthKit,
     intro:
-      "We take the gospel beyond the gate — visiting orphanages, hospitals and nearby communities with practical help and hope.",
-    focus: ["Orphanage visits", "Food & clothing drives", "Village mission weekends", "Literature distribution"],
-    meeting: "Outreach Sundays, monthly",
-    leader: "Personal Ministries Leader",
-  },
-  {
-    slug: "health",
-    name: "Health & Wellness",
-    tagline: "Afya na maisha bora",
-    image: health,
-    intro:
-      "Adventist health principles lived out on campus: free screenings, plant-based cooking classes and mental-health support.",
-    focus: ["Free BP & sugar checks", "Cooking demos", "Fitness Sundays", "Mental health talks"],
-    meeting: "Health camp: every semester",
-    leader: "Health Ministries Leader",
-  },
-  {
-    slug: "media",
-    name: "Media & Publicity",
-    tagline: "Habari na teknolojia",
-    image: media,
-    intro:
-      "The team behind every livestream, poster and photo album — using technology to spread the message far past Nyerere Campus.",
-    focus: ["Livestreaming", "Photography & video", "Social media", "Sound engineering"],
-    meeting: "Planning: Sunday, 4:00 PM",
-    leader: "Communication Secretary",
-  },
-  {
-    slug: "welfare",
-    name: "Welfare & Hospitality",
-    tagline: "Ukarimu na msaada",
-    image: fellowship,
-    intro:
-      "Nobody should struggle alone. Welfare supports students facing fees, health or food challenges and welcomes every newcomer.",
-    focus: ["Freshers welcome", "Emergency support fund", "Fellowship meals", "Hospital visitation"],
-    meeting: "Fellowship lunch: every Sabbath",
-    leader: "Welfare Secretary",
-  },
-  {
-    slug: "evangelism",
-    name: "Campus Evangelism",
-    tagline: "Uinjilisti chuoni",
-    image: crusade,
-    intro:
-      "Student-led evangelistic series, dorm-to-dorm visitation and public meetings that have led hundreds to baptism.",
-    focus: ["Annual campus crusade", "Dorm visitation", "Baptismal classes", "Follow-up discipleship"],
-    meeting: "Crusade: August & March",
-    leader: "Evangelism Coordinator",
+      "Idara ya Afya inahudumia huduma ya kwanza, afya ya jamii na ustawi wa wanachama wa TUCASA Nyerere Campus UDSM kwa kuishi kanuni za afya za Kiadventista.",
+    focus: [
+      "Huduma ya kwanza (First Aid)",
+      "Afya ya jamii na upimaji wa bure",
+      "Lishe bora na maisha yenye afya",
+      "Ustawi wa wanachama na afya ya akili",
+    ],
+    meeting: "Kambi ya afya: kila muhula",
+    leader: "Mratibu wa Afya",
   },
 ];
 
