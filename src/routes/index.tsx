@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { HeartHandshake, Users, Sparkles, CalendarDays, Music, HandHeart, Clock, MapPin, Flame } from "lucide-react";
+import { CalendarDays, Music, HandHeart, Clock, MapPin, Flame } from "lucide-react";
 import { motion, useScroll, useTransform, useReducedMotion } from "motion/react";
 import { useRef } from "react";
 import { PageShell } from "@/components/PageShell";
@@ -45,24 +45,6 @@ export const Route = createFileRoute("/")({
   }),
   component: Index,
 });
-
-const pillars = [
-  {
-    title: "FAITH",
-    icon: Sparkles,
-    text: "Weekly worship, Bible study and prayer bands that keep your walk with God alive through every semester.",
-  },
-  {
-    title: "COMMUNITY",
-    icon: Users,
-    text: "A family away from home — mentorship, study groups and friendships built on shared values.",
-  },
-  {
-    title: "SERVICE",
-    icon: HeartHandshake,
-    text: "Outreach, community projects and mission trips that put our faith into practical action.",
-  },
-];
 
 const activities = [
   { title: "Friday Vespers", icon: Music, text: "Songs, testimonies and the Word every Friday evening." },
