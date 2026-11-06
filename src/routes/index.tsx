@@ -170,31 +170,6 @@ function Index() {
         body="Different courses, regions and languages — yet every Friday evening the pieces come together into one congregation of students."
       />
 
-      <section className="px-6 py-20 sm:px-12 lg:px-16">
-        <Reveal>
-          <h2 className="text-center font-display text-4xl font-extrabold text-gold">
-            Why Join TUCASA?
-          </h2>
-        </Reveal>
-        <Stagger className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {pillars.map((p) => (
-            <StaggerItem key={p.title} className="glass-panel group rounded-2xl p-8 text-center">
-              <motion.div
-                whileHover={{ rotate: 8, scale: 1.12 }}
-                transition={{ type: "spring", stiffness: 300, damping: 15 }}
-                className="mx-auto grid size-14 place-items-center rounded-full bg-surface-2"
-              >
-                <p.icon className="size-6 text-gold" aria-hidden />
-              </motion.div>
-              <h3 className="mt-5 font-display text-2xl font-extrabold tracking-wide text-gold">
-                {p.title}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.text}</p>
-            </StaggerItem>
-          ))}
-        </Stagger>
-      </section>
-
       <PinnedScene
         src={img.bibleStudy}
         alt="Students studying the Bible together on the campus lawn"
