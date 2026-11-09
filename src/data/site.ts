@@ -237,9 +237,9 @@ export const galleryImages = [
 ];
 
 export const timeline = [
-  { year: "1979", title: "The beginning", text: "A handful of Adventist students begin meeting under a tree at the University of Dar es Salaam." },
+  { year: "1975", title: "The beginning", text: "A handful of Adventist students begin meeting under a tree at the University of Dar es Salaam — the strong root from which TUCASA Nyerere Campus grew." },
   { year: "1990s", title: "Growth", text: "Regular Sabbath services, a choir and organised outreach take root on campus." },
   { year: "2005", title: "Nyerere Campus", text: "TUCASA establishes a dedicated fellowship serving the Nyerere Campus community." },
   { year: "2015", title: "Missions era", text: "Annual student-led crusades and village missions expand beyond the city." },
-  { year: "Today", title: "500+ members", text: "A thriving family of students serving God, the campus and the nation." },
+  { year: "Today", title: "500+ members", text: "A new vision carried forward from generation to generation — students serving God, the campus and the nation." },
 ];

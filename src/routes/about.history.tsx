@@ -11,10 +11,13 @@ export const Route = createFileRoute("/about/history")({
       {
         name: "description",
         content:
-          "From a handful of students meeting under a tree in 1979 to a family of over 500 members — the story of TUCASA at Nyerere Campus.",
+          "From a handful of students meeting under a tree in 1975 to a family of over 500 members — five decades of TUCASA at Nyerere Campus, UDSM.",
       },
       { property: "og:title", content: "The story of TUCASA Nyerere Campus" },
-      { property: "og:description", content: "Four decades of faith, service and student ministry at UDSM." },
+      {
+        property: "og:description",
+        content: "Strong roots, new vision — five decades of faith, service and student ministry at UDSM.",
+      },
       { property: "og:type", content: "article" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -27,8 +30,8 @@ function HistoryPage() {
     <PageShell>
       <PageHero
         eyebrow="Our history"
-        title="Four decades under one tree, then a campus"
-        subtitle="What began as a small circle of praying students has grown into one of the most active student associations at the University of Dar es Salaam."
+        title="Strong roots, new vision — from generation to generation"
+        subtitle="Five decades ago a small circle of praying students gathered under a tree. What they began is still growing at the University of Dar es Salaam."
         image={img.campusAerial}
         imageAlt="Campus at sunset"
       />
@@ -38,12 +41,13 @@ function HistoryPage() {
         alt="Student leaders gathered together"
         caption="Generations of student leaders"
         title="Built by students, kept by grace"
-        body="From a handful of Adventist students meeting under a tree in the 1980s, every generation has handed over the same trust: keep the Word central, keep the door open, keep serving Dar es Salaam."
+        body="From a handful of Adventist students meeting under a tree in 1975, every generation has handed over the same trust: keep the Word central, keep the door open, keep serving Dar es Salaam. Strong roots, new vision — TNC from generation to generation."
       />
 
       <section className="px-6 py-20 sm:px-12 lg:px-16">
         <FromBelow>
-          <h2 className="font-display text-4xl font-extrabold text-gold">Milestones</h2>
+          <p className="text-xs font-bold uppercase tracking-[0.35em] text-gold">Generation to generation</p>
+          <h2 className="mt-3 font-display text-4xl font-extrabold text-gold">Milestones</h2>
         </FromBelow>
         <ol className="relative mt-12 space-y-12 border-l border-border pl-8">
           {timeline.map((t, i) => (

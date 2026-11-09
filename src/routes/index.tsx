@@ -56,7 +56,7 @@ const stats = [
   { value: "500+", label: "Active members" },
   { value: "4", label: "Departments" },
   { value: "40+", label: "Events yearly" },
-  { value: "1979", label: "Since" },
+  { value: "1975", label: "Since" },
 ];
 
 const ease = [0.22, 1, 0.36, 1] as const;

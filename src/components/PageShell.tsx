@@ -33,16 +33,12 @@ export function PageHero({
   imageAlt: string;
 }) {
   return (
-    <section className="relative overflow-hidden">
-      <ParallaxImage
-        src={image}
-        alt={imageAlt}
-        rounded=""
-        strength={12}
-        className="absolute inset-0 size-full"
-      />
+    <section className="relative flex min-h-[68vh] items-center overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden">
+        <ParallaxImage src={image} alt={imageAlt} rounded="" strength={12} className="size-full" />
+      </div>
       <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
-      <div className="relative px-6 py-24 sm:px-12 lg:px-16 lg:py-32">
+      <div className="relative w-full px-6 py-24 sm:px-12 lg:px-16 lg:py-32">
         {eyebrow && (
           <motion.p
             initial={{ opacity: 0, y: -20 }}
