@@ -141,7 +141,7 @@ export function SiteNav() {
             </div>
           ))}
 
-          <Link to="/join" className="ml-3">
+          <a href="https://www.app.tncudsm.org" className="ml-3">
             <motion.span
               whileHover={{ y: -2, scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
@@ -151,7 +151,13 @@ export function SiteNav() {
             >
               Join TUCASA
             </motion.span>
-          </Link>
+          </a>
+          <a
+            href="https://www.app.tncudsm.org"
+            className="ml-2 rounded-lg border border-border px-4 py-2.5 text-sm font-bold transition-colors hover:border-gold/60 hover:text-gold"
+          >
+            Login
+          </a>
         </nav>
 
         <button
@@ -224,14 +230,20 @@ export function SiteNav() {
                   </AnimatePresence>
                 </div>
               ))}
-              <Link to="/join" onClick={() => setMobileOpen(false)} className="mt-3">
+              <a href="https://www.app.tncudsm.org" className="mt-3">
                 <span
                   className="block rounded-lg px-4 py-3 text-center text-sm font-bold text-gold-foreground"
                   style={{ background: "var(--gradient-gold)", boxShadow: "var(--shadow-gold)" }}
                 >
                   Join TUCASA Today
                 </span>
-              </Link>
+              </a>
+              <a
+                href="https://www.app.tncudsm.org"
+                className="rounded-lg border border-border px-4 py-3 text-center text-sm font-bold transition-colors hover:border-gold/60 hover:text-gold"
+              >
+                Login
+              </a>
             </div>
           </motion.div>
         )}

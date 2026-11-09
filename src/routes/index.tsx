@@ -106,7 +106,7 @@ function Index() {
                 friendships that will last a lifetime.
               </p>,
               <div key="c" className="mt-9 flex flex-wrap gap-4">
-                <Link to="/join">
+                <a href="https://www.app.tncudsm.org">
                   <motion.span
                     whileHover={{ y: -4, scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
@@ -115,7 +115,17 @@ function Index() {
                   >
                     Join TUCASA Today
                   </motion.span>
-                </Link>
+                </a>
+                <a href="https://www.app.tncudsm.org">
+                  <motion.span
+                    whileHover={{ y: -4, scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                    transition={{ type: "spring", stiffness: 320, damping: 20 }}
+                    className="block rounded-lg border border-border bg-surface px-7 py-3.5 font-semibold backdrop-blur hover:border-gold/60 hover:text-gold"
+                  >
+                    Login
+                  </motion.span>
+                </a>
                 <Link to="/about">
                   <motion.span
                     whileHover={{ y: -4, scale: 1.03 }}
