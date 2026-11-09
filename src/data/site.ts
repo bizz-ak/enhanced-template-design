@@ -1,12 +1,18 @@
 /*
- * All images here contain no people (buildings, instruments, scenery).
- * To change an image: drop a new file in src/assets/ then update the matching import only.
+ * Real TUCASA Nyerere Campus UDSM photos uploaded by the user, served from the CDN.
+ * To change an image: update the matching import only.
  */
 import campusBuilding from "@/assets/campus-building.jpg";
-import sanctuary from "@/assets/sanctuary.jpg";
-import musicStage from "@/assets/music-stage.jpg";
-import mediaBooth from "@/assets/media-booth.jpg";
-import healthKit from "@/assets/health-kit.jpg";
+import worshipStageAsset from "@/assets/worship-stage.jpg.asset.json";
+import choirStageLiveAsset from "@/assets/choir-stage-live.jpg.asset.json";
+import singersMicrophonesAsset from "@/assets/singers-microphones.jpg.asset.json";
+import membersWellbeingAsset from "@/assets/members-wellbeing.jpg.asset.json";
+import beachFellowshipAsset from "@/assets/beach-fellowship.jpg.asset.json";
+import singingGroupAsset from "@/assets/singing-group.jpg.asset.json";
+import choirPortraitAsset from "@/assets/choir-portrait.jpg.asset.json";
+import choirOutdoorsAsset from "@/assets/choir-outdoors.jpg.asset.json";
+import choirServiceAsset from "@/assets/choir-service.jpg.asset.json";
+import choirFullAsset from "@/assets/choir-full.jpg.asset.json";
 import campusAerial from "@/assets/campus-aerial.jpg";
 import bgSunrise from "@/assets/bg-sunrise.jpg";
 import bgStainedGlass from "@/assets/bg-stainedglass.jpg";
@@ -15,19 +21,30 @@ import bgCampusNight from "@/assets/bg-campus-night.jpg";
 
 export const CAMPUS_NAME = "TUCASA Nyerere Campus UDSM";
 
+const worshipStage = worshipStageAsset.url;
+const choirStageLive = choirStageLiveAsset.url;
+const singersMicrophones = singersMicrophonesAsset.url;
+const membersWellbeing = membersWellbeingAsset.url;
+const beachFellowship = beachFellowshipAsset.url;
+const singingGroup = singingGroupAsset.url;
+const choirPortrait = choirPortraitAsset.url;
+const choirOutdoors = choirOutdoorsAsset.url;
+const choirService = choirServiceAsset.url;
+const choirFull = choirFullAsset.url;
+
 export const img = {
   campusBuilding,
-  worship: sanctuary,
-  choir: musicStage,
+  worship: worshipStage,
+  choir: choirStageLive,
   bibleStudy: bgScripture,
-  outreach: bgSunrise,
+  outreach: beachFellowship,
   baptism: bgSunrise,
   prayer: bgStainedGlass,
-  health: healthKit,
+  health: membersWellbeing,
   crusade: bgCampusNight,
   leaders: campusBuilding,
-  fellowship: sanctuary,
-  media: mediaBooth,
+  fellowship: beachFellowship,
+  media: singersMicrophones,
   campusAerial,
   bgSunrise,
   bgStainedGlass,
@@ -50,7 +67,7 @@ export const ministries: Ministry[] = [
     slug: "kiroho",
     name: "Spiritual Affairs Department",
     tagline: "Evangelism, Sabbath School and spiritual growth",
-    image: sanctuary,
+    image: worshipStage,
     intro:
       "The Spiritual Affairs Department of TUCASA Nyerere Campus UDSM leads evangelism, Sabbath School and the spiritual growth of students on campus — so that every student matures in faith throughout their studies.",
     focus: [
@@ -65,7 +82,7 @@ export const ministries: Ministry[] = [
     slug: "muziki",
     name: "Music Department",
     tagline: "TUCASA Nyerere Campus Choir and singing groups",
-    image: musicStage,
+    image: choirFull,
     intro:
       "The Music Department is home to the TUCASA Nyerere Campus Choir and the campus singing groups. We lead worship, record gospel songs and minister in churches across Dar es Salaam.",
     focus: [
@@ -80,7 +97,7 @@ export const ministries: Ministry[] = [
     slug: "mawasiliano",
     name: "Communication Department",
     tagline: "Media, social platforms, announcements and sound systems",
-    image: mediaBooth,
+    image: singersMicrophones,
     intro:
       "The Communication Department of TUCASA Nyerere Campus UDSM oversees media, social platforms, announcements and sound systems so that the message reaches far beyond the campus.",
     focus: [
@@ -95,7 +112,7 @@ export const ministries: Ministry[] = [
     slug: "afya",
     name: "Health Department",
     tagline: "First aid, community health and wellbeing",
-    image: healthKit,
+    image: membersWellbeing,
     intro:
       "The Health Department serves first aid, community health and the wellbeing of TUCASA Nyerere Campus UDSM members by living out Adventist health principles.",
     focus: [
@@ -205,16 +222,18 @@ export const events: EventItem[] = [
 ];
 
 export const galleryImages = [
-  { src: img.worship, alt: "Students worshipping with raised hands", label: "Friday Vespers" },
-  { src: img.choir, alt: "TUCASA choir singing on stage", label: "Choir Ministry" },
-  { src: img.bibleStudy, alt: "Students studying the Bible on the lawn", label: "Campus Bible Study" },
-  { src: img.outreach, alt: "Students giving food and clothes in a village", label: "Community Outreach" },
-  { src: img.baptism, alt: "Baptism at sunrise", label: "Baptism Sabbath" },
-  { src: img.health, alt: "Free health screening tent", label: "Health Expo" },
-  { src: img.fellowship, alt: "Fellowship meal outdoors", label: "Sabbath Fellowship" },
-  { src: img.media, alt: "Media team filming a service", label: "Media Team" },
-  { src: img.crusade, alt: "Students at an evening meeting", label: "Campus Crusade" },
+  { src: choirStageLive, alt: "TUCASA Nyerere Campus Choir ministering live on stage", label: "Choir Live on Stage" },
+  { src: choirFull, alt: "Full TUCASA Nyerere Campus Choir in purple robes", label: "The Campus Choir" },
+  { src: worshipStage, alt: "Students leading worship on stage", label: "Worship Service" },
+  { src: singingGroup, alt: "A TUCASA singing group ministering", label: "Singing Groups" },
+  { src: choirOutdoors, alt: "Choir members in purple robes outdoors", label: "Choir Family" },
+  { src: choirService, alt: "The choir ministering during a church service", label: "Sabbath Service" },
+  { src: choirPortrait, alt: "Choir members portrait after a service", label: "After the Service" },
+  { src: singersMicrophones, alt: "Singers leading praise with microphones", label: "Praise Team" },
+  { src: beachFellowship, alt: "TUCASA members on a beach fellowship outing", label: "Beach Fellowship" },
+  { src: membersWellbeing, alt: "TUCASA members together after a meeting", label: "Member Wellbeing" },
   { src: img.campusAerial, alt: "Aerial view of the campus at sunset", label: "Nyerere Campus" },
+  { src: img.campusBuilding, alt: "A University of Dar es Salaam campus building", label: "Our Campus" },
 ];
 
 export const leadership = [
