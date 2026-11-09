@@ -236,17 +236,6 @@ export const galleryImages = [
   { src: img.campusBuilding, alt: "A University of Dar es Salaam campus building", label: "Our Campus" },
 ];
 
-export const leadership = [
-  { role: "President", name: "Student Executive", note: "Provides overall vision and represents TUCASA to the university." },
-  { role: "Vice President", name: "Student Executive", note: "Coordinates ministries and deputises for the president." },
-  { role: "General Secretary", name: "Student Executive", note: "Keeps records, correspondence and membership registry." },
-  { role: "Treasurer", name: "Student Executive", note: "Stewards offerings, budgets and project funds transparently." },
-  { role: "Chaplain / Spiritual Advisor", name: "Campus Chaplaincy", note: "Provides pastoral care and spiritual direction." },
-  { role: "Music Coordinator", name: "Music Department", note: "Leads choir, instrumentalists and worship teams." },
-  { role: "Personal Ministries", name: "Outreach Department", note: "Plans evangelism, visitation and community projects." },
-  { role: "Communication Secretary", name: "Media Department", note: "Runs media, publicity and livestreams." },
-];
-
 export const timeline = [
   { year: "1979", title: "The beginning", text: "A handful of Adventist students begin meeting under a tree at the University of Dar es Salaam." },
   { year: "1990s", title: "Growth", text: "Regular Sabbath services, a choir and organised outreach take root on campus." },

@@ -1,9 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell, PageHero } from "@/components/PageShell";
-import { Stagger, StaggerItem } from "@/components/motion/Reveal";
 import { CurtainImage, FromSide } from "@/components/motion/ScrollFx";
-import { DriftBackdrop } from "@/components/motion/CinemaFx";
-import { img, leadership } from "@/data/site";
+import { img } from "@/data/site";
 
 export const Route = createFileRoute("/about/leadership")({
   head: () => ({
@@ -12,10 +10,13 @@ export const Route = createFileRoute("/about/leadership")({
       {
         name: "description",
         content:
-          "Meet the student executive committee and ministry leaders serving TUCASA Nyerere Campus, UDSM.",
+          "How TUCASA Nyerere Campus, UDSM is led: an executive committee elected each academic year and departmental leaders serving the student family.",
       },
-      { property: "og:title", content: "TUCASA Leadership Team" },
-      { property: "og:description", content: "The student executive and ministry leaders serving our community." },
+      { property: "og:title", content: "TUCASA Leadership" },
+      {
+        property: "og:description",
+        content: "Led by students, guided by the campus chaplaincy and accountable to its members.",
+      },
       { property: "og:type", content: "article" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -34,7 +35,7 @@ function LeadershipPage() {
         imageAlt="Student leadership team standing together"
       />
 
-      <section className="px-6 py-20 sm:px-12 lg:px-16">
+      <section className="px-6 py-24 sm:px-12 lg:px-16">
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <FromSide dir="left">
             <h2 className="font-display text-4xl font-extrabold text-gold">How we are organised</h2>
@@ -43,34 +44,13 @@ function LeadershipPage() {
               leaders who run the day-to-day ministries. Elections are open to all registered
               members.
             </p>
+            <p className="mt-4 leading-relaxed text-muted-foreground">
+              Leadership here is a season of service — one academic year to carry the ministry
+              forward and hand it on stronger.
+            </p>
           </FromSide>
           <CurtainImage src={img.media} alt="Media team at work during a service" className="aspect-[4/3]" />
         </div>
-      </section>
-
-      <DriftBackdrop src={img.bgCampusNight} alt="Campus at night" tint={0.82}>
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.35em] text-gold">The team</p>
-          <h2 className="mt-4 font-display text-4xl font-extrabold leading-tight">
-            Elected by students, sustained by prayer
-          </h2>
-          <p className="mt-4 leading-relaxed text-muted-foreground">
-            Leadership here is a season of service — one academic year to carry the ministry
-            forward and hand it on stronger.
-          </p>
-        </div>
-      </DriftBackdrop>
-
-      <section className="px-6 pb-24 pt-20 sm:px-12 lg:px-16">
-        <Stagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {leadership.map((l) => (
-            <StaggerItem key={l.role} className="glass-panel hover-lift rounded-2xl p-7">
-              <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold">{l.role}</p>
-              <h3 className="mt-2 font-display text-xl font-bold">{l.name}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{l.note}</p>
-            </StaggerItem>
-          ))}
-        </Stagger>
       </section>
     </PageShell>
   );
